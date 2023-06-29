@@ -72,7 +72,7 @@ public class AnimalModalController implements Initializable {
         if (animalSelecionado != null) {
             animal_idFild.setText(Integer.toString(animalSelecionado.animal_id));
             ong_idFild.setText(Integer.toString(animalSelecionado.ong_id));
-            tipo_animalFild.setText(animalSelecionado.tipo__animal);
+            tipo_animalFild.setText(animalSelecionado.tipo_animal);
             racaFild.setText(animalSelecionado.raca_animal);
             sexo_animalFild.setText(animalSelecionado.sexo_animal);
             porteFild.setText(animalSelecionado.porte);

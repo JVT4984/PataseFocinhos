@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.UsuarioController">
+   <children>
+      <Button layoutX="667.0" layoutY="14.0" mnemonicParsing="false" onAction="#novoUsuario" text="Adicionar Usuário" />
+      <TableView fx:id="tabela_Usuario" prefHeight="400.0" prefWidth="603.0">
+        <columns>
+          <TableColumn fx:id="colunaUsuario_id" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="colunaUsuario_login" prefWidth="75.0" text="Login" />
+            <TableColumn fx:id="colunaUsuario_senha" prefWidth="75.0" text="Senha" />
+            <TableColumn fx:id="colunaUsuario_nome" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="colunaUsuario_numero" prefWidth="75.0" text="Telefone" />
+            <TableColumn fx:id="colunaUsuario_email" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="colunaUsuario_endereco" prefWidth="75.0" text="Cod Endereco" />
+            <TableColumn fx:id="colunaUsuario_nvl_acesso" prefWidth="75.0" text="nvl acesso" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

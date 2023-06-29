@@ -28,7 +28,7 @@ public class AnimalController implements Initializable {
     TableColumn<Animal, Integer> colunaOng_id;
 
     @FXML
-    TableColumn<Animal, String> colunaTipo__animal;
+    TableColumn<Animal, String> colunaTipo_animal;
 
     @FXML
     TableColumn<Animal, String> colunaRaca;
@@ -50,7 +50,7 @@ public class AnimalController implements Initializable {
 
         colunaAnimal_id.setCellValueFactory(new PropertyValueFactory<>("animal_id"));
         colunaOng_id.setCellValueFactory(new PropertyValueFactory<>("ong_id"));
-        colunaTipo__animal.setCellValueFactory(new PropertyValueFactory<>("tipo__animal"));
+        colunaTipo_animal.setCellValueFactory(new PropertyValueFactory<>("tipo_animal"));
         colunaRaca.setCellValueFactory(new PropertyValueFactory<>("raca"));
         colunaSexo_animal.setCellValueFactory(new PropertyValueFactory<>("sexo_animal"));
         colunaPorte.setCellValueFactory(new PropertyValueFactory<>("porte"));
@@ -59,8 +59,8 @@ public class AnimalController implements Initializable {
 
         AnimalDAO animalDAO = new AnimalDAO();
         try {
-            List<Animal> produtos = animalDAO.getAll();
-            tabelaAnimal.getItems().addAll(produtos);
+            List<Animal> animais = animalDAO.getAll();
+            tabelaAnimal.getItems().addAll(animais);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

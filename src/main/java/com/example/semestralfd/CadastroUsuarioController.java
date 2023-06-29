@@ -1,11 +1,9 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-import java.time.Instant;
-import java.util.Date;
+import java.io.IOException;
 
 public class CadastroUsuarioController {
 
@@ -27,7 +25,7 @@ public class CadastroUsuarioController {
     public static Usuario usuario;
 
     @FXML
-    public void salvar() {
+    public void salvar() throws IOException {
         Usuario novoUsuario = new Usuario();
         if (!usuario_idFild.getText().isBlank()){
             novoUsuario.usuario_id = Integer.parseInt(usuario_idFild.getText());
@@ -41,12 +39,12 @@ public class CadastroUsuarioController {
 
         usuario = novoUsuario;
 
-        HelloApplication.closeCurrentWindow();
+        HelloApplication.setRoot("hello-view");
     }
 
     @FXML
-    public void cancelar() {
+    public void cancelar() throws IOException {
 
-        HelloApplication.closeCurrentWindow();
+        HelloApplication.setRoot("hello-view");
     }
 }

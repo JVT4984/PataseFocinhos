@@ -14,7 +14,7 @@ public class AnimalDAO {
                 Animal animal = new Animal();
                 animal.animal_id = rs.getInt(1);
                 animal.ong_id = rs.getInt(2);
-                animal.tipo__animal = rs.getString(3);
+                animal.tipo_animal = rs.getString(3);
                 animal.raca_animal = rs.getString(4);
                 animal.sexo_animal = rs.getString(5);
                 animal.porte = rs.getString(6);
@@ -41,13 +41,8 @@ public class AnimalDAO {
 
             preparedStatement.execute();
 
-            //Obtem o ID do registro inserido
-            try (ResultSet rs = preparedStatement.getGeneratedKeys()){
-                rs.next();
-                novoAnimal.animal_id = rs.getInt(1);
             }
         }
-    }
 
     public void delete(Animal deleteAnimal) throws SQLException {
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement("delete from animal where animal_id = ?")) {
@@ -58,7 +53,8 @@ public class AnimalDAO {
     }
 
     public void update (Animal editAnimal) throws SQLException {
-        String sql = "update animal SET ong_ong_id = ?, raca_animal = '?', porte_animal ='?', idade = ?, descricao_animal = '?' where animal_id = ?";
+        String sql = "update animal SET ong_ong_id = ?, tipo_animal = ?, raca_animal = ?, sexo_animal = ?, porte_animal = ?," +
+                " idade = ?, descricao_animal = ? where animal_id = ?";
         try ( PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)){
             preparedStatement.setInt(1, editAnimal.ong_id);
             preparedStatement.setString(2, editAnimal.tipo_animal);

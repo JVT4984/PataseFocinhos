@@ -1,16 +1,20 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class UsuarioController {
+public class UsuarioController implements Initializable {
     @FXML
-    TableView<Usuario> tabelaUsuario;
+    TableView<Usuario> tabela_Usuario;
 
     @FXML
     TableColumn<Usuario, Integer> colunaUsuario_id;
@@ -35,22 +39,58 @@ public class UsuarioController {
     @FXML
     TableColumn<Usuario, Integer> colunaUsuario_nvl_acesso;
 
-    @FXML
-    TableColumn<Usuario, Date> colunaUsuario_dtcadastro;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*
+        Configura as colunas da tabela da interfdce gráfica
+         */
+        colunaUsuario_id.setCellValueFactory(new PropertyValueFactory<>("usuario_id"));
+        colunaUsuario_login.setCellValueFactory(new PropertyValueFactory<>("usuario_login"));
+        colunaUsuario_senha.setCellValueFactory(new PropertyValueFactory<>("usuario_senha"));
+        colunaUsuario_nome.setCellValueFactory(new PropertyValueFactory<>("usuario_nome"));
+        colunaUsuario_numero.setCellValueFactory(new PropertyValueFactory<>("usuario_numero"));
+        colunaUsuario_email.setCellValueFactory(new PropertyValueFactory<>("usuario_email"));
+        colunaUsuario_endereco.setCellValueFactory(new PropertyValueFactory<>("usuario_endereco_id"));
+        colunaUsuario_nvl_acesso.setCellValueFactory(new PropertyValueFactory<>("usuario_nvl_acesso"));
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        try {
+            List<Usuario> usuarios = usuarioDAO.getAll();
+            tabela_Usuario.getItems().addAll(usuarios);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //  @FXML
+    //public void novoUsuario() throws IOException, SQLException {
+    //CadastroUsuarioController.usuario = null;
+
+    // HelloApplication.showModal("cadastro-usuario-view");
+
+    // O modal foi fechado
+    // Usuario novoUsuario = CadastroUsuarioController.usuario;
+
+    // if(novoUsuario != null)
+    // tabelaUsuario.getItems().add(novoUsuario);
+
+    // UsuarioDAO usuario = new UsuarioDAO();
+    // usuario.insertUsuario(novoUsuario);
 
     @FXML
     public void novoUsuario() throws IOException, SQLException {
         CadastroUsuarioController.usuario = null;
 
-        HelloApplication.showModal("cadastro-usuario-view");
+        HelloApplication.setRoot("cadastrar-usuario-view");
 
         // O modal foi fechado
         Usuario novoUsuario = CadastroUsuarioController.usuario;
 
-        if(novoUsuario != null)
-            tabelaUsuario.getItems().add(novoUsuario);
+        if (novoUsuario != null) {
+            tabela_Usuario.getItems().add(novoUsuario);
 
-        UsuarioDAO usuario = new UsuarioDAO();
-        usuario.insertUsuario(novoUsuario);
+            new UsuarioDAO().insertUsuario(novoUsuario);
+        }
     }
 }
+//}

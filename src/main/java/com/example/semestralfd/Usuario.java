@@ -63,7 +63,7 @@ public class Usuario {
 
     public void  setUsuario_endereco_id(int usuario_endereco_id) {this.usuario_endereco_id = usuario_endereco_id;}
 
-    public int getusuario_nvl_acesso() {
+    public int getUsuario_nvl_acesso() {
         return usuario_nvl_acesso;
     }
 
