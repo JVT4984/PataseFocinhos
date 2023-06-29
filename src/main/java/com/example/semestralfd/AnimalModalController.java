@@ -38,18 +38,7 @@ public class AnimalModalController implements Initializable {
     @FXML
     TextField descriçaoFild;
 
-    @FXML
-    DatePicker dtcadastro_animalFild;
-
     public static Animal animal;
-
-    @FXML
-    public void getDate(ActionEvent event) {
-
-        LocalDate DataAnimal = dtcadastro_animalFild.getValue();
-        System.out.println(dtcadastro_animalFild.toString());
-    }
-
 
     @FXML
     public void salvar() {
@@ -58,13 +47,12 @@ public class AnimalModalController implements Initializable {
             novoAnimal.animal_id = Integer.parseInt(animal_idFild.getText());
         }
         novoAnimal.ong_id = Integer.parseInt(ong_idFild.getText());
-        novoAnimal.tipo__animal = tipo_animalFild.getText();
+        novoAnimal.tipo_animal = tipo_animalFild.getText();
         novoAnimal.raca_animal = racaFild.getText();
         novoAnimal.sexo_animal = sexo_animalFild.getText();
         novoAnimal.porte = porteFild.getText();
         novoAnimal.idade_animal = Integer.parseInt(idadeFild.getText());
         novoAnimal.describe = descriçaoFild.getText();
-        novoAnimal.dtcadastro_animal = Date.from(Instant.parse((dtcadastro_animalFild.toString())));
 
         animal = novoAnimal;
 
@@ -90,8 +78,6 @@ public class AnimalModalController implements Initializable {
             porteFild.setText(animalSelecionado.porte);
             idadeFild.setText(Integer.toString(animalSelecionado.idade_animal));
             descriçaoFild.setText(animalSelecionado.describe);
-            //dtcadastro_animalFild.setValue(LocalDate.parse(animalSelecionado.dtcadastro_animal.toString()));
-            //dtcadastro_animalFild.set(String.valueOf(Date.from(animalSelecionado.dtcadastro_animal.toInstant())));
         }
     }
 }

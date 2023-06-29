@@ -34,7 +34,6 @@ public class UsuarioDAO {
             preparedStatement.setInt(5, novoUsuario.usuario_numero);
             preparedStatement.setString(6, novoUsuario.usuario_email);
             preparedStatement.setInt(7, novoUsuario.usuario_endereco_id);
-            preparedStatement.setDate(8, (Date) novoUsuario.usuario_dtcadastro);
 
             preparedStatement.execute();
         }

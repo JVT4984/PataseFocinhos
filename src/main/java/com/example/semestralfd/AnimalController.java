@@ -45,10 +45,6 @@ public class AnimalController implements Initializable {
     @FXML
     TableColumn<Animal, String> colunaDescribe;
 
-    @FXML
-    TableColumn<Animal, Date> colunaDtcadastro_animal;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -60,7 +56,6 @@ public class AnimalController implements Initializable {
         colunaPorte.setCellValueFactory(new PropertyValueFactory<>("porte"));
         colunaIdade.setCellValueFactory(new PropertyValueFactory<>("idade_animal"));
         colunaDescribe.setCellValueFactory(new PropertyValueFactory<>("describe"));
-        colunaDtcadastro_animal.setCellValueFactory(new PropertyValueFactory<>("dtcadastro_animal"));
 
         AnimalDAO animalDAO = new AnimalDAO();
         try {
@@ -128,8 +123,8 @@ public class AnimalController implements Initializable {
         produtoSelecionado.idade_animal = animalEditado.idade_animal;
         produtoSelecionado.describe = animalEditado.describe;
 
-        new AnimalDAO().update(animalEditado);
         tabelaAnimal.refresh();
+        new AnimalDAO().update(animalEditado);
     }
 
 }

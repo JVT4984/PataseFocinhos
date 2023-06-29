@@ -1,6 +1,7 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.time.Instant;
@@ -22,8 +23,6 @@ public class CadastroUsuarioController {
     TextField usuario_emailFild;
     @FXML
     TextField usuario_enderecoFild;
-    @FXML
-    TextField usuario_dtcadastro;
 
     public static Usuario usuario;
 
@@ -39,7 +38,6 @@ public class CadastroUsuarioController {
         novoUsuario.usuario_numero = Integer.parseInt(usuario_numeroFild.getText());
         novoUsuario.usuario_email = usuario_emailFild.getText();
         novoUsuario.usuario_endereco_id = Integer.parseInt(usuario_enderecoFild.getText());
-        novoUsuario.usuario_dtcadastro = Date.from(Instant.parse(usuario_dtcadastro.getText()));
 
         usuario = novoUsuario;
 

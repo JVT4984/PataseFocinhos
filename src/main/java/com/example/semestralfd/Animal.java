@@ -6,13 +6,12 @@ public class Animal {
 
     public int animal_id;
     public int ong_id;
-    public String tipo__animal;
+    public String tipo_animal;
     public String raca_animal;
     public String sexo_animal;
     public String porte;
     public int idade_animal;
     public String describe;
-    public Date dtcadastro_animal;
 
     public int getAnimal_id() {
         return animal_id;
@@ -28,12 +27,12 @@ public class Animal {
         this.ong_id = ong_id;
     }
 
-    public String getTipo__animal() {
-        return tipo__animal;
+    public String getTipo_animal() {
+        return tipo_animal;
     }
 
-    public void setTipo__animal(String tipo__animal) {
-        this.tipo__animal = tipo__animal;
+    public void setTipo_animal(String tipo_animal) {
+        this.tipo_animal = tipo_animal;
     }
 
     public String getRaca() {
@@ -74,13 +73,5 @@ public class Animal {
 
     public void setDescribe(String describe) {
         this.describe = describe;
-    }
-
-    public Date getDtcadastro_animal() {
-        return dtcadastro_animal;
-    }
-
-    public void setDtcadastro_animal(Date dtcadastro_animal) {
-        this.dtcadastro_animal = dtcadastro_animal;
     }
 }

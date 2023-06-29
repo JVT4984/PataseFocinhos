@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.CadastroUsuarioController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.CadastroUsuarioController">
    <children>
       <TextField fx:id="usuario_idFild" disable="true" layoutX="140.0" layoutY="14.0" prefHeight="25.0" prefWidth="447.0" />
       <TextField fx:id="usuario_senhaFild" layoutX="140.0" layoutY="81.0" prefHeight="25.0" prefWidth="447.0" />
@@ -23,7 +23,5 @@
       <Label layoutX="42.0" layoutY="230.0" text="Endereço" />
       <Button layoutX="524.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
       <Button layoutX="464.0" layoutY="361.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-      <Label layoutX="20.0" layoutY="273.0" text="Data do Cadastro" />
-      <TextField fx:id="usuario_dtcadastro" layoutX="140.0" layoutY="269.0" prefHeight="25.0" prefWidth="447.0" />
    </children>
 </AnchorPane>
