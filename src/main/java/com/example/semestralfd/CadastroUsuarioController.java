@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class CadastroUsuarioController {
 
@@ -25,7 +27,7 @@ public class CadastroUsuarioController {
     public static Usuario usuario;
 
     @FXML
-    public void salvar() throws IOException {
+    public void salvar() throws IOException, SQLException {
         Usuario novoUsuario = new Usuario();
         if (!usuario_idFild.getText().isBlank()){
             novoUsuario.usuario_id = Integer.parseInt(usuario_idFild.getText());
@@ -39,8 +41,11 @@ public class CadastroUsuarioController {
 
         usuario = novoUsuario;
 
+        new UsuarioDAO().insertUsuario(novoUsuario);
+
         HelloApplication.setRoot("hello-view");
     }
+
 
     @FXML
     public void cancelar() throws IOException {

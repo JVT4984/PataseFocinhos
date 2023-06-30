@@ -61,22 +61,6 @@ public class UsuarioController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
-    //  @FXML
-    //public void novoUsuario() throws IOException, SQLException {
-    //CadastroUsuarioController.usuario = null;
-
-    // HelloApplication.showModal("cadastro-usuario-view");
-
-    // O modal foi fechado
-    // Usuario novoUsuario = CadastroUsuarioController.usuario;
-
-    // if(novoUsuario != null)
-    // tabelaUsuario.getItems().add(novoUsuario);
-
-    // UsuarioDAO usuario = new UsuarioDAO();
-    // usuario.insertUsuario(novoUsuario);
-
     @FXML
     public void novoUsuario() throws IOException, SQLException {
         CadastroUsuarioController.usuario = null;
@@ -93,4 +77,4 @@ public class UsuarioController implements Initializable {
         }
     }
 }
-//}
+

@@ -40,7 +40,7 @@ public class LoginController {
         }
     }
     public void cadastrarUsuario() throws IOException {
-        HelloApplication.setRoot("usuario-view");
+        HelloApplication.showModal("usuario-view");
     }
 
 
