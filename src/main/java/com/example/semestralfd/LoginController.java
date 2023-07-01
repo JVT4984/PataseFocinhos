@@ -39,11 +39,33 @@ public class LoginController {
             lableEntrar.setText("Usuário ou Senha Incorreto!");
         }
     }
+
+    @FXML
+    public void entrarOng() throws IOException, SQLException {
+        Ong ongLogin = new Ong();
+        ongLogin.ong_login = usuarioFild.getText();
+        ongLogin.ong_senha = senhaFild.getText();
+        boolean ong_existe = new OngDAO().ong_existe(ongLogin);
+
+
+        if (ong_existe) {
+            // Usuário existe
+            System.out.println("Entrando...");
+            lableEntrar.setText("Entrando...");
+            HelloApplication.setRoot("main-view");
+
+        } else {
+            // Usuário não existe
+            System.out.println("Usuário ou Senha Incorreto!");
+            lableEntrar.setText("Usuário ou Senha Incorreto!");
+        }
+    }
     public void cadastrarUsuario() throws IOException {
-        HelloApplication.showModal("usuario-view");
+        HelloApplication.showModal("cadastro-usuario-view");
     }
 
-
-
+    public void cadastrarOng() throws IOException {
+        HelloApplication.showModal("cadastro-ong-view");
+    }
 }
 

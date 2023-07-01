@@ -127,5 +127,9 @@ public class AnimalController implements Initializable {
         new AnimalDAO().update(animalEditado);
     }
 
+    @FXML
+    public void voltar() throws IOException {
+        HelloApplication.setRoot("main-view");
+    }
 }
 
