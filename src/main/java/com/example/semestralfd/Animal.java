@@ -5,6 +5,7 @@ import java.util.Date;
 public class Animal {
 
     public int animal_id;
+
     public int ong_id;
     public String tipo_animal;
     public String raca_animal;

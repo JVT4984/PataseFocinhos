@@ -3,6 +3,9 @@ package com.example.semestralfd;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OngDAO {
 
@@ -25,6 +28,27 @@ public class OngDAO {
             }
         }
     }
+
+    public List<Ong> getAll() throws SQLException {
+        try (Statement statement = ConnectionSingleton.getConnection().createStatement();
+             ResultSet rs = statement.executeQuery("select * from ong;")) {
+            List<Ong> ongs = new ArrayList<>();
+            while (rs.next()) {
+                Ong ong = new Ong();
+                ong.ong_id = rs.getInt(1);
+                ong.ong_login = rs.getString(2);
+                ong.ong_senha = rs.getString(3);
+                ong.ong_nome = rs.getString(4);
+                ong.ong_telefone = rs.getInt(5);
+                ong.ong_email = rs.getString(6);
+                ong.ong_endereco_id = rs.getInt(7);
+                ong.ong_nvl_acesso = rs.getInt(8);
+                ongs.add(ong);
+            }
+            return ongs;
+        }
+
+    }
     public void insertOng(Ong novaOng) throws SQLException {
         String sql = "insert into ong (ong_id, endereco_endereco_id, ong_login, ong_senha, ong_nome, ong_num, ong_email, nvl_acesso) values" +
                 "(?, ?, ?, ?, ?, ?, ?, 3)";
@@ -38,6 +62,25 @@ public class OngDAO {
             preparedStatement.setString(7, novaOng.ong_email);
 
 
+            preparedStatement.execute();
+        }
+    }
+
+    public void delete(Ong deleteOng) throws SQLException {
+        try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement("delete from ong where ong_id = ?")) {
+            preparedStatement.setInt(1, deleteOng.ong_id);
+            preparedStatement.execute();
+
+        }
+    }
+
+    public void update (Ong editOng) throws SQLException {
+        String sql = "update ong SET endereco_endereco_id, ong_nome, ong_num, ong_email where animal_id = ?";
+        try ( PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)){
+            preparedStatement.setInt(1, editOng.ong_endereco_id);
+            preparedStatement.setString(2, editOng.ong_nome);
+            preparedStatement.setInt(3, editOng.ong_telefone);
+            preparedStatement.setString(4, editOng.ong_email);
             preparedStatement.execute();
         }
     }

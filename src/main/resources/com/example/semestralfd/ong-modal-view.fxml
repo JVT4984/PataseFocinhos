@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.OngModalController">
+   <children>
+      <TextField fx:id="ong_idFild" disable="true" layoutX="89.0" layoutY="15.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="23.0" layoutY="19.0" text="Cógido" />
+      <TextField fx:id="ong_nomeFild" layoutX="89.0" layoutY="60.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="26.0" layoutY="64.0" text="Nome" />
+      <TextField fx:id="ong_emailFild" layoutX="89.0" layoutY="100.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="28.0" layoutY="104.0" text="Email" />
+      <TextField fx:id="ong_numeroFild" layoutX="89.0" layoutY="139.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="20.0" layoutY="143.0" text="Telefone" />
+      <TextField fx:id="ong_enderecoFild" layoutX="89.0" layoutY="188.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="18.0" layoutY="192.0" text="Endereco" />
+      <Button layoutX="466.0" layoutY="361.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+   </children>
+</AnchorPane>

@@ -15,4 +15,13 @@ public class MainController {
     public void sair() throws IOException {
         HelloApplication.setRoot("hello-view");
     }
+
+    @FXML
+    public void entrarOngs() throws IOException{
+        HelloApplication.setRoot("ong-view");
+    }
+
+    public void entrarUsuarios() throws IOException{
+        HelloApplication.setRoot("usuario-view");
+    }
 }
