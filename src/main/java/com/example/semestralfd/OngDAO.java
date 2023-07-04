@@ -36,12 +36,12 @@ public class OngDAO {
             while (rs.next()) {
                 Ong ong = new Ong();
                 ong.ong_id = rs.getInt(1);
-                ong.ong_login = rs.getString(2);
-                ong.ong_senha = rs.getString(3);
-                ong.ong_nome = rs.getString(4);
-                ong.ong_telefone = rs.getInt(5);
-                ong.ong_email = rs.getString(6);
-                ong.ong_endereco_id = rs.getInt(7);
+                ong.ong_login = rs.getString(3);
+                ong.ong_senha = rs.getString(4);
+                ong.ong_nome = rs.getString(5);
+                ong.ong_telefone = rs.getInt(6);
+                ong.ong_email = rs.getString(7);
+                ong.ong_endereco_id = rs.getInt(2);
                 ong.ong_nvl_acesso = rs.getInt(8);
                 ongs.add(ong);
             }
@@ -75,7 +75,7 @@ public class OngDAO {
     }
 
     public void update (Ong editOng) throws SQLException {
-        String sql = "update ong SET endereco_endereco_id, ong_nome, ong_num, ong_email where animal_id = ?";
+        String sql = "update ong SET endereco_endereco_id, ong_nome, ong_num, ong_email where ong_id = ?";
         try ( PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)){
             preparedStatement.setInt(1, editOng.ong_endereco_id);
             preparedStatement.setString(2, editOng.ong_nome);
