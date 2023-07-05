@@ -1,12 +1,15 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class UsuarioModalController {
+public class UsuarioModalController implements Initializable {
 
     @FXML
     TextField usuario_idFild;
@@ -35,7 +38,7 @@ public class UsuarioModalController {
         novoUsuario.usuario_login = usuario_loginFild.getText();
         novoUsuario.usuario_senha = usuario_senhaFild.getText();
         novoUsuario.usuario_nome = usuario_nomeFild.getText();
-        novoUsuario.usuario_numero = Integer.parseInt(usuario_numeroFild.getText());
+        novoUsuario.usuario_numero = usuario_numeroFild.getText();
         novoUsuario.usuario_email = usuario_emailFild.getText();
         novoUsuario.usuario_endereco_id = Integer.parseInt(usuario_enderecoFild.getText());
 
@@ -52,5 +55,21 @@ public class UsuarioModalController {
 
         HelloApplication.setRoot("hello-view");
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Usuario usuarioSelecionado = UsuarioModalController.usuario;
+
+        if (usuarioSelecionado != null) {
+            usuario_idFild.setText(Integer.toString(usuarioSelecionado.usuario_id));
+            usuario_loginFild.setText(usuarioSelecionado.usuario_login);
+            usuario_senhaFild.setText(usuarioSelecionado.usuario_senha);
+            usuario_nomeFild.setText(usuarioSelecionado.usuario_nome);
+            usuario_numeroFild.setText(usuarioSelecionado.usuario_numero);
+            usuario_emailFild.setText(usuarioSelecionado.usuario_email);
+            usuario_enderecoFild.setText(Integer.toString(usuarioSelecionado.usuario_endereco_id));
+        }
+    }
 }
+
 

@@ -78,14 +78,14 @@ public class AnimalController implements Initializable {
         if(novoAnimal != null)
             tabelaAnimal.getItems().add(novoAnimal);
 
-        AnimalDAO produto = new AnimalDAO();
-        produto.insert(novoAnimal);
+        AnimalDAO animal = new AnimalDAO();
+        animal.insert(novoAnimal);
     }
 
     @FXML
     public void excluir() throws SQLException {
 
-        //Obter o produto selecionada
+        //Obter o aniaml selecionada
         Animal animalSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
 
         //Confirmação de exclusão
@@ -99,16 +99,16 @@ public class AnimalController implements Initializable {
 
             AnimalDAO delete = new AnimalDAO();
             delete.delete(animalSelecionado);
-            // Excluir o produto
+            // Excluir o animal
             tabelaAnimal.getItems().remove(animalSelecionado);
         }
     }
 
     @FXML
     public void editar() throws IOException, SQLException {
-        Animal produtoSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
+        Animal animalSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
 
-        AnimalModalController.animal = produtoSelecionado;
+        AnimalModalController.animal = animalSelecionado;
 
         HelloApplication.showModal("animal-modal-view");
 
@@ -116,12 +116,12 @@ public class AnimalController implements Initializable {
 
         Animal animalEditado = AnimalModalController.animal;
 
-        produtoSelecionado.animal_id = animalEditado.animal_id;
-        produtoSelecionado.ong_id = animalEditado.ong_id;
-        produtoSelecionado.raca_animal = animalEditado.raca_animal;
-        produtoSelecionado.porte = animalEditado.porte;
-        produtoSelecionado.idade_animal = animalEditado.idade_animal;
-        produtoSelecionado.describe = animalEditado.describe;
+        animalSelecionado.animal_id = animalEditado.animal_id;
+        animalSelecionado.ong_id = animalEditado.ong_id;
+        animalSelecionado.raca_animal = animalEditado.raca_animal;
+        animalSelecionado.porte = animalEditado.porte;
+        animalSelecionado.idade_animal = animalEditado.idade_animal;
+        animalSelecionado.describe = animalEditado.describe;
 
         tabelaAnimal.refresh();
         new AnimalDAO().update(animalEditado);

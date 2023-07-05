@@ -39,7 +39,7 @@ public class OngDAO {
                 ong.ong_login = rs.getString(3);
                 ong.ong_senha = rs.getString(4);
                 ong.ong_nome = rs.getString(5);
-                ong.ong_telefone = rs.getInt(6);
+                ong.ong_telefone = rs.getString(6);
                 ong.ong_email = rs.getString(7);
                 ong.ong_endereco_id = rs.getInt(2);
                 ong.ong_nvl_acesso = rs.getInt(8);
@@ -58,7 +58,7 @@ public class OngDAO {
             preparedStatement.setString(3, novaOng.ong_login);
             preparedStatement.setString(4, novaOng.ong_senha);
             preparedStatement.setString(5, novaOng.ong_nome);
-            preparedStatement.setInt(6, novaOng.ong_telefone);
+            preparedStatement.setString(6, novaOng.ong_telefone);
             preparedStatement.setString(7, novaOng.ong_email);
 
 
@@ -75,12 +75,15 @@ public class OngDAO {
     }
 
     public void update (Ong editOng) throws SQLException {
-        String sql = "update ong SET endereco_endereco_id, ong_nome, ong_num, ong_email where ong_id = ?";
+        String sql = "update ong SET endereco_endereco_id = ?, ong_login = ?, ong_senha = ?, ong_nome = ?, ong_num = ?, ong_email = ? where ong_id = ?";
         try ( PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)){
             preparedStatement.setInt(1, editOng.ong_endereco_id);
-            preparedStatement.setString(2, editOng.ong_nome);
-            preparedStatement.setInt(3, editOng.ong_telefone);
-            preparedStatement.setString(4, editOng.ong_email);
+            preparedStatement.setString(2, editOng.ong_login);
+            preparedStatement.setString(3, editOng.ong_senha);
+            preparedStatement.setString(4, editOng.ong_nome);
+            preparedStatement.setString(5, editOng.ong_telefone);
+            preparedStatement.setString(6, editOng.ong_email);
+            preparedStatement.setInt(7, editOng.ong_id);
             preparedStatement.execute();
         }
     }

@@ -35,7 +35,7 @@ public class CadastroUsuarioController {
         novoUsuario.usuario_login = usuario_loginFild.getText();
         novoUsuario.usuario_senha = usuario_senhaFild.getText();
         novoUsuario.usuario_nome = usuario_nomeFild.getText();
-        novoUsuario.usuario_numero = Integer.parseInt(usuario_numeroFild.getText());
+        novoUsuario.usuario_numero = usuario_numeroFild.getText();
         novoUsuario.usuario_email = usuario_emailFild.getText();
         novoUsuario.usuario_endereco_id = Integer.parseInt(usuario_enderecoFild.getText());
 

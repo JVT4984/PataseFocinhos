@@ -17,7 +17,7 @@ public class UsuarioDAO {
                 usuario.usuario_login = rs.getString(3);
                 usuario.usuario_senha = rs.getString(4);
                 usuario.usuario_nome = rs.getString(5);
-                usuario.usuario_numero = rs.getInt(6);
+                usuario.usuario_numero = rs.getString(6);
                 usuario.usuario_email = rs.getString(7);
                 usuario.usuario_nvl_acesso = rs.getInt(8);
                 usuarios.add(usuario);
@@ -55,7 +55,7 @@ public class UsuarioDAO {
             preparedStatement.setString(3, novoUsuario.usuario_login);
             preparedStatement.setString(4, novoUsuario.usuario_senha);
             preparedStatement.setString(5, novoUsuario.usuario_nome);
-            preparedStatement.setInt(6, novoUsuario.usuario_numero);
+            preparedStatement.setString(6, novoUsuario.usuario_numero);
             preparedStatement.setString(7, novoUsuario.usuario_email);
 
 
@@ -72,13 +72,16 @@ public class UsuarioDAO {
     }
 
     public void update (Usuario editUsuario) throws SQLException {
-        String sql = "update usuario SET endereco_endereco_id = ?, usuario_nome = ?, usuario_num = ?, usuario_email = ? where usuario_id = ?";
+        String sql = "update usuario SET endereco_endereco_id = ?, usuario_login = ?, usuario_senha = ?, usuario_nome = ?, usuario_num = ?, usuario_email = ?" +
+                " where usuario_id = ?";
         try ( PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)){
             preparedStatement.setInt(1, editUsuario.usuario_endereco_id);
-            preparedStatement.setString(2, editUsuario.usuario_nome);
-            preparedStatement.setInt(3, editUsuario.usuario_numero);
-            preparedStatement.setString(4, editUsuario.usuario_email);
-            preparedStatement.setInt(5, editUsuario.usuario_id);
+            preparedStatement.setString(2, editUsuario.usuario_login);
+            preparedStatement.setString(3, editUsuario.usuario_senha);
+            preparedStatement.setString(5, editUsuario.usuario_nome);
+            preparedStatement.setString(6, editUsuario.usuario_numero);
+            preparedStatement.setString(7, editUsuario.usuario_email);
+            preparedStatement.setInt(8, editUsuario.usuario_id);
             preparedStatement.execute();
         }
     }

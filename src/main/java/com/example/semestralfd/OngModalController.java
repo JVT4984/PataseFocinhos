@@ -1,12 +1,15 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class OngModalController {
+public class OngModalController implements Initializable {
 
     @FXML
     TextField ong_idFild;
@@ -32,25 +35,45 @@ public class OngModalController {
         if (!ong_idFild.getText().isBlank()){
             novaOng.ong_id = Integer.parseInt(ong_idFild.getText());
         }
+        //if (!ong_loginFild.getText().isBlank()){
+          //  novaOng.ong_login = ong_loginFild.getText();
+        //}
+        //if (!ong_senhaFild.getText().isBlank()){
+          //  novaOng.ong_senha = ong_senhaFild.getText();
+        //}
         novaOng.ong_login = ong_loginFild.getText();
         novaOng.ong_senha = ong_senhaFild.getText();
         novaOng.ong_nome = ong_nomeFild.getText();
-        novaOng.ong_telefone = Integer.parseInt(ong_numeroFild.getText());
+        novaOng.ong_telefone = ong_numeroFild.getText();
         novaOng.ong_email = ong_emailFild.getText();
         novaOng.ong_endereco_id = Integer.parseInt(ong_enderecoFild.getText());
 
         ong = novaOng;
 
-        new OngDAO().insertOng(novaOng);
-
-        HelloApplication.setRoot("hello-view");
+        HelloApplication.closeCurrentWindow();
     }
 
 
     @FXML
     public void cancelar() throws IOException {
 
-        HelloApplication.setRoot("hello-view");
+        HelloApplication.setRoot("ong-view");
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Ong ongSelecionada = OngModalController.ong;
+
+        if (ongSelecionada != null) {
+            ong_idFild.setText(Integer.toString(ongSelecionada.ong_id));
+            ong_loginFild.setText((ongSelecionada.ong_login));
+            ong_senhaFild.setText(ongSelecionada.ong_senha);
+            ong_nomeFild.setText(ongSelecionada.ong_nome);
+            ong_numeroFild.setText(ongSelecionada.ong_telefone);
+            ong_emailFild.setText(ongSelecionada.ong_email);
+            ong_enderecoFild.setText(Integer.toString(ongSelecionada.ong_endereco_id));
+        }
     }
 }
+
 

@@ -26,7 +26,7 @@ public class UsuarioController implements Initializable {
     TableColumn<Usuario, String> colunaUsuario_nome;
 
     @FXML
-    TableColumn<Usuario, Integer> colunaUsuario_numero;
+    TableColumn<Usuario, String> colunaUsuario_numero;
 
     @FXML
     TableColumn<Usuario, String> colunaUsuario_email;
@@ -88,6 +88,8 @@ public class UsuarioController implements Initializable {
         Usuario usuarioEditado = UsuarioModalController.usuario;
 
         usuarioSelecionado.usuario_id = usuarioEditado.usuario_id;
+        usuarioSelecionado.usuario_login = usuarioEditado.usuario_login;
+        usuarioSelecionado.usuario_senha = usuarioEditado.usuario_senha;
         usuarioSelecionado.usuario_nome = usuarioEditado.usuario_nome;
         usuarioSelecionado.usuario_email = usuarioEditado.usuario_email;
         usuarioSelecionado.usuario_numero= usuarioEditado.usuario_numero;

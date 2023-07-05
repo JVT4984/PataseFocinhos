@@ -8,7 +8,7 @@ public class Usuario {
     public  String usuario_login;
     public  String usuario_senha;
     public String usuario_nome;
-    public int  usuario_numero;
+    public String  usuario_numero;
     public String usuario_email;
     public int usuario_endereco_id;
     public int usuario_nvl_acesso;
@@ -43,11 +43,11 @@ public class Usuario {
         this.usuario_nome = usuario_nome;
     }
 
-    public int getUsuario_numero() {
+    public String getUsuario_numero() {
         return usuario_numero;
     }
 
-    public void setUsuario_numero(int usuario_numero) {
+    public void setUsuario_numero(String usuario_numero) {
         this.usuario_numero = usuario_numero;
     }
 

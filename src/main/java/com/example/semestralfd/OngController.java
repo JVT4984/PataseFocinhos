@@ -26,7 +26,7 @@ public class OngController implements Initializable {
     @FXML
     TableColumn<Ong, String> colunaOng_nome;
     @FXML
-    TableColumn<Ong, Integer> colunaOng_telefone;
+    TableColumn<Ong, String> colunaOng_telefone;
     @FXML
     TableColumn<Ong, String> colunaOng_email;
 
@@ -83,6 +83,8 @@ public class OngController implements Initializable {
         Ong ongEditada = OngModalController.ong;
 
         ongSelecionada.ong_id = ongEditada.ong_id;
+        ongSelecionada.ong_login = ongEditada.ong_login;
+        ongSelecionada.ong_senha = ongEditada.ong_senha;
         ongSelecionada.ong_nome = ongEditada.ong_nome;
         ongSelecionada.ong_email = ongEditada.ong_email;
         ongSelecionada.ong_telefone= ongEditada.ong_telefone;

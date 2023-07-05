@@ -35,7 +35,7 @@ public class CadastroOngController {
         novaOng.ong_login = ong_loginFild.getText();
         novaOng.ong_senha = ong_senhaFild.getText();
         novaOng.ong_nome = ong_nomeFild.getText();
-        novaOng.ong_telefone = Integer.parseInt(ong_numeroFild.getText());
+        novaOng.ong_telefone = ong_numeroFild.getText();
         novaOng.ong_email = ong_emailFild.getText();
         novaOng.ong_endereco_id = Integer.parseInt(ong_enderecoFild.getText());
 

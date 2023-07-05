@@ -10,7 +10,7 @@ public class Ong {
 
     public String ong_nome;
 
-    public int ong_telefone;
+    public String ong_telefone;
 
     public String ong_email;
 
@@ -50,11 +50,11 @@ public class Ong {
         this.ong_nome = ong_nome;
     }
 
-    public int getOng_telefone() {
+    public String getOng_telefone() {
         return ong_telefone;
     }
 
-    public void setOng_telefone(int ong_telefone) {
+    public void setOng_telefone(String ong_telefone) {
         this.ong_telefone = ong_telefone;
     }
 
