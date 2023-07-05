@@ -30,6 +30,7 @@ public class UsuarioController implements Initializable {
 
     @FXML
     TableColumn<Usuario, String> colunaUsuario_email;
+
     @FXML
     TableColumn<Usuario, Integer> colunaUsuario_endereco;
 

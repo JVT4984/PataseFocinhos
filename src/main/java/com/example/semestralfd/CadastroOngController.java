@@ -1,10 +1,12 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class CadastroOngController {
 
@@ -22,6 +24,8 @@ public class CadastroOngController {
     TextField ong_emailFild;
     @FXML
     TextField ong_enderecoFild;
+    @FXML
+    DatePicker ong_dt_Fild;
 
 
     public static Ong ong;
@@ -38,6 +42,10 @@ public class CadastroOngController {
         novaOng.ong_telefone = ong_numeroFild.getText();
         novaOng.ong_email = ong_emailFild.getText();
         novaOng.ong_endereco_id = Integer.parseInt(ong_enderecoFild.getText());
+
+        LocalDate localDate = ong_dt_Fild.getValue();
+        java.sql.Date sqlDate = java.sql.Date.valueOf(localDate);
+        novaOng.ong_dt_cadastro = sqlDate;
 
         ong = novaOng;
 

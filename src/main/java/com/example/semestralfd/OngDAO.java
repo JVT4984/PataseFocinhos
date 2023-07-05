@@ -1,9 +1,6 @@
 package com.example.semestralfd;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +47,8 @@ public class OngDAO {
 
     }
     public void insertOng(Ong novaOng) throws SQLException {
-        String sql = "insert into ong (ong_id, endereco_endereco_id, ong_login, ong_senha, ong_nome, ong_num, ong_email, nvl_acesso) values" +
-                "(?, ?, ?, ?, ?, ?, ?, 3)";
+        String sql = "insert into ong (ong_id, endereco_endereco_id, ong_login, ong_senha, ong_nome, ong_num, ong_email, nvl_acesso, ong_dt_cadastro) values" +
+                "(?, ?, ?, ?, ?, ?, ?, 3, ?)";
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql);){
             preparedStatement.setInt(1, novaOng.ong_id);
             preparedStatement.setInt(2, novaOng.ong_endereco_id);
@@ -60,6 +57,7 @@ public class OngDAO {
             preparedStatement.setString(5, novaOng.ong_nome);
             preparedStatement.setString(6, novaOng.ong_telefone);
             preparedStatement.setString(7, novaOng.ong_email);
+            preparedStatement.setDate(8, (Date) novaOng.ong_dt_cadastro);
 
 
             preparedStatement.execute();

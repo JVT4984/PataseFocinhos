@@ -48,7 +48,7 @@ public class UsuarioDAO {
     }
     public void insertUsuario(Usuario novoUsuario) throws SQLException {
         String sql = "insert into usuario (usuario_id, endereco_endereco_id, usuario_login, usuario_senha, usuario_nome," +
-                " usuario_num, usuario_email, nvl_acesso) values(?, ?, ?, ?, ?, ?, ?, 2)";
+                " usuario_num, usuario_email, nvl_acesso, usuario_dt_cadastro) values(?, ?, ?, ?, ?, ?, ?, 2, ?)";
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql);){
             preparedStatement.setInt(1, novoUsuario.usuario_id);
             preparedStatement.setInt(2, novoUsuario.usuario_endereco_id);
@@ -57,6 +57,7 @@ public class UsuarioDAO {
             preparedStatement.setString(5, novoUsuario.usuario_nome);
             preparedStatement.setString(6, novoUsuario.usuario_numero);
             preparedStatement.setString(7, novoUsuario.usuario_email);
+            preparedStatement.setDate(8, (Date) novoUsuario.usuario_dt_cadastro);
 
 
             preparedStatement.execute();
@@ -78,10 +79,10 @@ public class UsuarioDAO {
             preparedStatement.setInt(1, editUsuario.usuario_endereco_id);
             preparedStatement.setString(2, editUsuario.usuario_login);
             preparedStatement.setString(3, editUsuario.usuario_senha);
-            preparedStatement.setString(5, editUsuario.usuario_nome);
-            preparedStatement.setString(6, editUsuario.usuario_numero);
-            preparedStatement.setString(7, editUsuario.usuario_email);
-            preparedStatement.setInt(8, editUsuario.usuario_id);
+            preparedStatement.setString(4, editUsuario.usuario_nome);
+            preparedStatement.setString(5, editUsuario.usuario_numero);
+            preparedStatement.setString(6, editUsuario.usuario_email);
+            preparedStatement.setInt(7, editUsuario.usuario_id);
             preparedStatement.execute();
         }
     }

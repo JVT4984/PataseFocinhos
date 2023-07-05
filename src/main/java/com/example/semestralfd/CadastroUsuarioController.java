@@ -1,11 +1,17 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class CadastroUsuarioController {
 
@@ -23,6 +29,8 @@ public class CadastroUsuarioController {
     TextField usuario_emailFild;
     @FXML
     TextField usuario_enderecoFild;
+    @FXML
+    DatePicker usuario_dt_Fild;
 
     public static Usuario usuario;
 
@@ -38,6 +46,10 @@ public class CadastroUsuarioController {
         novoUsuario.usuario_numero = usuario_numeroFild.getText();
         novoUsuario.usuario_email = usuario_emailFild.getText();
         novoUsuario.usuario_endereco_id = Integer.parseInt(usuario_enderecoFild.getText());
+
+        LocalDate localDate = usuario_dt_Fild.getValue();
+        java.sql.Date sqlDate = java.sql.Date.valueOf(localDate);
+        novoUsuario.usuario_dt_cadastro = sqlDate;
 
         usuario = novoUsuario;
 

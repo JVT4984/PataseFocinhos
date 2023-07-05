@@ -12,6 +12,7 @@ public class Usuario {
     public String usuario_email;
     public int usuario_endereco_id;
     public int usuario_nvl_acesso;
+    public Date usuario_dt_cadastro;
 
     public int getUsuario_id() {
         return usuario_id;
@@ -68,5 +69,9 @@ public class Usuario {
     }
 
     public void setUsuario_nvl_acesso(int usuario_nvl_acesso) {this.usuario_nvl_acesso = usuario_nvl_acesso;}
+
+    public Date getUsuario_dt_cadastro() {return usuario_dt_cadastro;}
+
+    public void setUsuario_dt_cadastro(Date usuario_dt_cadastro) {this.usuario_dt_cadastro = usuario_dt_cadastro;}
 
 }
