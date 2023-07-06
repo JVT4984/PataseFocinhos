@@ -24,4 +24,8 @@ public class MainController {
     public void entrarUsuarios() throws IOException{
         HelloApplication.setRoot("usuario-view");
     }
+
+    public void fazerAdocoes() throws IOException{
+        HelloApplication.setRoot("adocao-view");
+    }
 }
