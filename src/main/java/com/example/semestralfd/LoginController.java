@@ -25,12 +25,11 @@ public class LoginController {
         usuarioLogin.usuario_login = usuarioFild.getText();
         usuarioLogin.usuario_senha = senhaFild.getText();
         usuarioLogin.usuario_nvl_acesso = 2;
+        //usuarioLogin.usuario_id = Us
         boolean usuarioExiste = new UsuarioDAO().existe(usuarioLogin);
 
         if (usuarioExiste) {
             // Usuário existe
-            System.out.println("Entrando...");
-            lableEntrar.setText("Entrando...");
             System.out.println(usuarioLogin.usuario_nvl_acesso);
             // Define o nível de acesso do usuário no singleton
             UsuarioSingleton.getUsuarioSingleton().setNivelDeAcesso(usuarioLogin.usuario_nvl_acesso);
@@ -47,6 +46,7 @@ public class LoginController {
                 // Usuário existe
                 System.out.println("Entrando...");
                 lableEntrar.setText("Entrando...");
+                System.out.println(ongLogin.ong_nvl_acesso);
                 // Define o nível de acesso da ONG no singleton
                 OngSingleton.getOngSingleton().setNivelDeAcesso(ongLogin.ong_nvl_acesso);
                 HelloApplication.setRoot("main-view");

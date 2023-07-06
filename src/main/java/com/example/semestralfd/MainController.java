@@ -36,6 +36,7 @@ public class MainController {
             HelloApplication.setRoot("usuario-view");
         } else {
             // O usuário não tem permissão para acessar a visualização do usuário
+
             // Exibe uma mensagem de erro ou redireciona o usuário para outra visualização
         }
     }
