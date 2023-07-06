@@ -24,42 +24,41 @@ public class LoginController {
         Usuario usuarioLogin = new Usuario();
         usuarioLogin.usuario_login = usuarioFild.getText();
         usuarioLogin.usuario_senha = senhaFild.getText();
+        usuarioLogin.usuario_nvl_acesso = 2;
         boolean usuarioExiste = new UsuarioDAO().existe(usuarioLogin);
-
 
         if (usuarioExiste) {
             // Usuário existe
             System.out.println("Entrando...");
             lableEntrar.setText("Entrando...");
+            System.out.println(usuarioLogin.usuario_nvl_acesso);
+            // Define o nível de acesso do usuário no singleton
+            UsuarioSingleton.getUsuarioSingleton().setNivelDeAcesso(usuarioLogin.usuario_nvl_acesso);
             HelloApplication.setRoot("main-view");
 
         } else {
-            // Usuário não existe
-            System.out.println("Usuário ou Senha Incorreto!");
-            lableEntrar.setText("Usuário ou Senha Incorreto!");
+            Ong ongLogin = new Ong();
+            ongLogin.ong_login = usuarioFild.getText();
+            ongLogin.ong_senha = senhaFild.getText();
+            ongLogin.ong_nvl_acesso = 3;
+            boolean ong_existe = new OngDAO().ong_existe(ongLogin);
+
+            if (ong_existe) {
+                // Usuário existe
+                System.out.println("Entrando...");
+                lableEntrar.setText("Entrando...");
+                // Define o nível de acesso da ONG no singleton
+                OngSingleton.getOngSingleton().setNivelDeAcesso(ongLogin.ong_nvl_acesso);
+                HelloApplication.setRoot("main-view");
+
+            } else {
+                // Usuário não existe
+                System.out.println("Usuário ou Senha Incorreto!");
+                lableEntrar.setText("Usuário ou Senha Incorreto!");
+            }
         }
     }
 
-    @FXML
-    public void entrarOng() throws IOException, SQLException {
-        Ong ongLogin = new Ong();
-        ongLogin.ong_login = usuarioFild.getText();
-        ongLogin.ong_senha = senhaFild.getText();
-        boolean ong_existe = new OngDAO().ong_existe(ongLogin);
-
-
-        if (ong_existe) {
-            // Usuário existe
-            System.out.println("Entrando...");
-            lableEntrar.setText("Entrando...");
-            HelloApplication.setRoot("main-view");
-
-        } else {
-            // Usuário não existe
-            System.out.println("Usuário ou Senha Incorreto!");
-            lableEntrar.setText("Usuário ou Senha Incorreto!");
-        }
-    }
     public void cadastrarUsuario() throws IOException {
         HelloApplication.showModal("cadastro-usuario-view");
     }

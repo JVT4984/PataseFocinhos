@@ -15,7 +15,6 @@
    <PasswordField fx:id="senhaFild" />
    <Label fx:id="lableEntrar" />
     <Button onAction="#entrar" text="Entrar" />
-   <Button mnemonicParsing="false" onAction="#entrarOng" text="Entrar Ong" />
    <Label />
    <Button mnemonicParsing="false" onAction="#cadastrarUsuario" text="Cadastrar Usuário" />
    <Button mnemonicParsing="false" onAction="#cadastrarOng" text="Cadastrar ONG" />

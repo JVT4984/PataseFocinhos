@@ -57,7 +57,7 @@ public class OngModalController implements Initializable {
     @FXML
     public void cancelar() throws IOException {
 
-        HelloApplication.setRoot("ong-view");
+        HelloApplication.closeCurrentWindow();
     }
 
     @Override

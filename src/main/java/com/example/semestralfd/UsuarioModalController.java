@@ -53,7 +53,7 @@ public class UsuarioModalController implements Initializable {
     @FXML
     public void cancelar() throws IOException {
 
-        HelloApplication.setRoot("hello-view");
+        HelloApplication.closeCurrentWindow();
     }
 
     @Override
