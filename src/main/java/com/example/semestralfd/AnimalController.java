@@ -87,26 +87,31 @@ public class AnimalController implements Initializable {
 
         //Obter o aniaml selecionada
         Animal animalSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
+        if (OngSingleton.getOngSingleton().getOng_id() == animalSelecionado.ong_id) {
 
-        //Confirmação de exclusão
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Excluir produto");
-        alert.setHeaderText("Código do animal: " + animalSelecionado.animal_id + ", Ong: " + animalSelecionado.ong_id + ", Raça: " + animalSelecionado.raca_animal);
-        alert.setContentText("Deseja excluir o animal?");
+            //Confirmação de exclusão
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Excluir produto");
+            alert.setHeaderText("Código do animal: " + animalSelecionado.animal_id + ", Ong: " + animalSelecionado.ong_id + ", Raça: " + animalSelecionado.raca_animal);
+            alert.setContentText("Deseja excluir o animal?");
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
 
-            AnimalDAO delete = new AnimalDAO();
-            delete.delete(animalSelecionado);
-            // Excluir o animal
-            tabelaAnimal.getItems().remove(animalSelecionado);
+                AnimalDAO delete = new AnimalDAO();
+                delete.delete(animalSelecionado);
+                // Excluir o animal
+                tabelaAnimal.getItems().remove(animalSelecionado);
+            }
+        }else {
+            System.out.println("Vc não tem permissão");
         }
     }
 
     @FXML
     public void editar() throws IOException, SQLException {
         Animal animalSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
+        if (OngSingleton.getOngSingleton().getOng_id() == animalSelecionado.ong_id) {
 
         AnimalModalController.animal = animalSelecionado;
 
@@ -125,6 +130,10 @@ public class AnimalController implements Initializable {
 
         tabelaAnimal.refresh();
         new AnimalDAO().update(animalEditado);
+
+        }else {
+            System.out.println("Vc não tem permissão");
+        }
     }
 
     @FXML

@@ -53,6 +53,7 @@ public class OngController implements Initializable {
 
         //Obter o produto selecionada
         Ong ongSelecionada = tabelaOng.getSelectionModel().getSelectedItem();
+        if (OngSingleton.getOngSingleton().getOng_id() == ongSelecionada.ong_id) {
 
         //Confirmação de exclusão
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -61,37 +62,45 @@ public class OngController implements Initializable {
         alert.setContentText("Deseja excluir a conta?");
 
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK) {
 
             OngDAO delete = new OngDAO();
             delete.delete(ongSelecionada);
             // Excluir o produto
             tabelaOng.getItems().remove(ongSelecionada);
         }
+
+        }else {
+            System.out.println("Vc não tem permissão");
+        }
     }
 
     @FXML
     public void editar() throws IOException, SQLException {
         Ong ongSelecionada = tabelaOng.getSelectionModel().getSelectedItem();
+        if (OngSingleton.getOngSingleton().getOng_id() == ongSelecionada.ong_id) {
 
-        OngModalController.ong = ongSelecionada;
+            OngModalController.ong = ongSelecionada;
 
-        HelloApplication.showModal("ong-modal-view");
+            HelloApplication.showModal("ong-modal-view");
 
-        // O modal foi fechado
+            // O modal foi fechado
 
-        Ong ongEditada = OngModalController.ong;
+            Ong ongEditada = OngModalController.ong;
 
-        ongSelecionada.ong_id = ongEditada.ong_id;
-        ongSelecionada.ong_login = ongEditada.ong_login;
-        ongSelecionada.ong_senha = ongEditada.ong_senha;
-        ongSelecionada.ong_nome = ongEditada.ong_nome;
-        ongSelecionada.ong_email = ongEditada.ong_email;
-        ongSelecionada.ong_telefone= ongEditada.ong_telefone;
-        ongSelecionada.ong_endereco_id= ongEditada.ong_endereco_id;
+            ongSelecionada.ong_id = ongEditada.ong_id;
+            ongSelecionada.ong_login = ongEditada.ong_login;
+            ongSelecionada.ong_senha = ongEditada.ong_senha;
+            ongSelecionada.ong_nome = ongEditada.ong_nome;
+            ongSelecionada.ong_email = ongEditada.ong_email;
+            ongSelecionada.ong_telefone = ongEditada.ong_telefone;
+            ongSelecionada.ong_endereco_id = ongEditada.ong_endereco_id;
 
-        tabelaOng.refresh();
-        new OngDAO().update(ongEditada);
+            tabelaOng.refresh();
+            new OngDAO().update(ongEditada);
+        }else {
+            System.out.println("Vc não tem permissão");
+        }
     }
 
     @FXML

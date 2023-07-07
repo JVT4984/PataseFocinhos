@@ -6,7 +6,12 @@ import java.io.IOException;
 public class MainController {
     @FXML
     public void entrarAnimal() throws IOException {
-        HelloApplication.setRoot("animal-view");
+        if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3){
+            HelloApplication.setRoot("animal-view");
+        }
+        else {
+            System.out.println("Vc não tem permição");
+        }
     }
 
     @FXML
@@ -22,11 +27,14 @@ public class MainController {
 
     @FXML
     public void entrarOngs() throws IOException {
-        HelloApplication.setRoot("ong-view");
+        if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3){
+            HelloApplication.setRoot("ong-view");
+        }else {
+            System.out.println("vc não tem permissão");
+        }
     }
 
     public void entrarUsuarios() throws IOException {
-        // Verifica se o usuário tem permissão para acessar a visualização do usuário
         if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == 2) {
             HelloApplication.setRoot("usuario-view");
         } else {
@@ -35,6 +43,10 @@ public class MainController {
     }
 
     public void fazerAdocoes() throws IOException {
-        HelloApplication.setRoot("adocao-view");
+        if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == 2){
+            HelloApplication.setRoot("adocao-view");
+        }else {
+            System.out.println("Vc não tem permissão");
+        }
     }
 }
