@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="453.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioController">
+   <children>
+      <Button layoutX="602.0" layoutY="56.0" mnemonicParsing="false" text="exibir relatorio" />
+      <Button layoutX="602.0" layoutY="99.0" mnemonicParsing="false" text="exibir relatorio" />
+      <Button layoutX="602.0" layoutY="142.0" mnemonicParsing="false" text="exibir relatorio" />
+   </children>
+</AnchorPane>
