@@ -85,4 +85,29 @@ public class OngDAO {
             preparedStatement.execute();
         }
     }
+
+    public static Ong getOng(Ong ong) throws SQLException {
+        String sql =  "select * from ong where ong_login = ? AND ong_senha = ? ";
+        try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, ong.ong_login);
+            preparedStatement.setString(2, ong.ong_senha);
+
+            try (ResultSet resultado = preparedStatement.executeQuery()) {
+                if (resultado.next()) {
+                    Ong ongLogada = new Ong();
+                    ongLogada.ong_id = resultado.getInt("ong_id");
+                    ongLogada.ong_endereco_id = resultado.getInt("endereco_endereco_id");
+                    ongLogada.ong_login = resultado.getString("ong_login");
+                    ongLogada.ong_senha = resultado.getString("ong_senha");
+                    ongLogada.ong_nome = resultado.getString("ong_nome");
+                    ongLogada.ong_telefone = resultado.getString("ong_num");
+                    ongLogada.ong_email = resultado.getString("ong_email");
+                    ongLogada.ong_nvl_acesso = resultado.getInt("nvl_acesso");
+                    return ongLogada;
+                } else {
+                    return null;
+                }
+            }
+        }
+    }
 }

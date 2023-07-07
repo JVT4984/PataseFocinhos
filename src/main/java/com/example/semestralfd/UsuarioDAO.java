@@ -86,4 +86,29 @@ public class UsuarioDAO {
             preparedStatement.execute();
         }
     }
+
+    public static Usuario getUsuario(Usuario usuario) throws SQLException {
+        String sql =  "select * from usuario where usuario_login = ? AND usuario_senha = ? ";
+        try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, usuario.usuario_login);
+            preparedStatement.setString(2, usuario.usuario_senha);
+
+            try (ResultSet resultado = preparedStatement.executeQuery()) {
+                if (resultado.next()) {
+                    Usuario usuarioLogado = new Usuario();
+                    usuarioLogado.usuario_id = resultado.getInt("usuario_id");
+                    usuarioLogado.usuario_endereco_id = resultado.getInt("endereco_endereco_id");
+                    usuarioLogado.usuario_login = resultado.getString("usuario_login");
+                    usuarioLogado.usuario_senha = resultado.getString("usuario_senha");
+                    usuarioLogado.usuario_nome = resultado.getString("usuario_nome");
+                    usuarioLogado.usuario_numero = resultado.getString("usuario_num");
+                    usuarioLogado.usuario_email = resultado.getString("usuario_email");
+                    usuarioLogado.usuario_nvl_acesso = resultado.getInt("nvl_acesso");
+                    return usuarioLogado;
+                } else {
+                    return null;
+                }
+            }
+        }
+    }
 }
