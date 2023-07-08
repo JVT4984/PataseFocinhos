@@ -29,7 +29,7 @@ public class AnimalDAO {
 
     public void insert(Animal novoAnimal) throws SQLException {
         String sql = "insert into animal (ong_ong_id, tipo_animal, raca_animal," +
-                " sexo_animal, porte_animal, idade, descricao_animal) values (?, ?, ?, ?, ?, ?, ?)";
+                " sexo_animal, porte_animal, idade, descricao_animal, animal_dt_cadastro) values (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql);){
             preparedStatement.setInt(1, novoAnimal.ong_id);
             preparedStatement.setString(2, novoAnimal.tipo_animal);
@@ -38,6 +38,7 @@ public class AnimalDAO {
             preparedStatement.setString(5, novoAnimal.porte);
             preparedStatement.setInt(6, novoAnimal.idade_animal);
             preparedStatement.setString(7, novoAnimal.describe);
+            preparedStatement.setDate(8, (Date) novoAnimal.animal_dt_cadastro);
 
             preparedStatement.execute();
 

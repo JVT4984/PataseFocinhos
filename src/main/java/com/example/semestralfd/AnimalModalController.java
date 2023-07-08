@@ -38,6 +38,9 @@ public class AnimalModalController implements Initializable {
     @FXML
     TextField descriçaoFild;
 
+    @FXML
+    DatePicker dt_cadastro;
+
     public static Animal animal;
 
     @FXML
@@ -53,6 +56,10 @@ public class AnimalModalController implements Initializable {
         novoAnimal.porte = porteFild.getText();
         novoAnimal.idade_animal = Integer.parseInt(idadeFild.getText());
         novoAnimal.describe = descriçaoFild.getText();
+
+        LocalDate localDate = dt_cadastro.getValue();
+        java.sql.Date sqlDate = java.sql.Date.valueOf(localDate);
+        novoAnimal.animal_dt_cadastro = sqlDate;
 
         animal = novoAnimal;
 

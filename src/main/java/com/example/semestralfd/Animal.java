@@ -13,6 +13,7 @@ public class Animal {
     public String porte;
     public int idade_animal;
     public String describe;
+    public Date animal_dt_cadastro;
 
     public int getAnimal_id() {
         return animal_id;
@@ -75,4 +76,8 @@ public class Animal {
     public void setDescribe(String describe) {
         this.describe = describe;
     }
+
+    public Date getAnimal_dt_cadastro() {return animal_dt_cadastro;}
+
+    public void setAnimal_dt_cadastro(Date animal_dt_cadastro) {this.animal_dt_cadastro = animal_dt_cadastro;}
 }
