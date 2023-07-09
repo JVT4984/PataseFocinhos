@@ -16,7 +16,7 @@ public class AdocaoModalController {
     @FXML
     TextField adocao_idFild;
     @FXML
-    TextField adocao_ongiidFild;
+    TextField adocao_ongidFild;
     @FXML
     TextField adocao_usuarioidFIld;
     @FXML
@@ -32,7 +32,7 @@ public class AdocaoModalController {
         if (!adocao_idFild.getText().isBlank()){
             novaAdocao.adocao_id = Integer.parseInt(adocao_idFild.getText());
         }
-        novaAdocao.adocao_ong_id = Integer.parseInt(adocao_ongiidFild.getText());
+        novaAdocao.adocao_ong_id = Integer.parseInt(adocao_ongidFild.getText());
         novaAdocao.adocao_usuario_id = Integer.parseInt(adocao_usuarioidFIld.getText());
         novaAdocao.adocao_animal_id = Integer.parseInt(adocao_animalidFild.getText());
 
@@ -44,7 +44,7 @@ public class AdocaoModalController {
 
         new AdocaoDAO().insertAdocao(novaAdocao);
 
-        HelloApplication.setRoot("hello-view");
+        HelloApplication.closeCurrentWindow();
     }
     @FXML
     public void cancelarAdocoa() throws IOException {

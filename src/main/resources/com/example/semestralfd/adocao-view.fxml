@@ -5,20 +5,18 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="675.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoController">
+<AnchorPane prefHeight="400.0" prefWidth="599.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoController">
    <children>
-      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="602.0" style="-fx-background-color: #f7a220;">
+      <TableView fx:id="tabelaAdocao" prefHeight="400.0" prefWidth="521.0" style="-fx-background-color: #f7a220;">
         <columns>
-          <TableColumn fx:id="colunaAnimal_id" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="colunaOng_id" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaTipo_animal" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaRaca" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaSexo_animal" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaPorte" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaIdade" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaDescribe" prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="colunaAdocao_id" prefWidth="85.0" text="C1" />
+          <TableColumn fx:id="colunaUsuarioid" prefWidth="89.0" text="C2" />
+            <TableColumn fx:id="colunaOng_id" prefWidth="93.0" text="C2" />
+            <TableColumn fx:id="colunaAnimal_id" prefWidth="114.0" text="C2" />
+            <TableColumn fx:id="colunaData_adocao" prefWidth="139.0" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="609.0" layoutY="14.0" mnemonicParsing="false" onAction="#adotar" style="-fx-background-color: #f5dab0;" text="Adotar" />
+      <Button layoutX="537.0" layoutY="14.0" mnemonicParsing="false" onAction="#adotar" style="-fx-background-color: #f5dab0;" text="Adotar" />
+      <Button layoutX="540.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #f5dab0;" text="Voltar" />
    </children>
 </AnchorPane>
