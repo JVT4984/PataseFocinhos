@@ -5,23 +5,23 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AnimalController">
+<AnchorPane prefHeight="400.0" prefWidth="724.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AnimalController">
    <children>
-      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="643.0">
+      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #f7a220;">
         <columns>
-          <TableColumn fx:id="colunaAnimal_id" prefWidth="52.0" text="Código" />
-          <TableColumn fx:id="colunaOng_id" prefWidth="101.0" text="Código da Ong" />
-            <TableColumn fx:id="colunaTipo_animal" prefWidth="57.0" text="Tipo" />
-            <TableColumn fx:id="colunaRaca" prefWidth="74.0" text="Raça" />
-            <TableColumn fx:id="colunaSexo_animal" prefWidth="79.0" text="Sexo" />
-            <TableColumn fx:id="colunaPorte" prefWidth="85.0" text="Porte" />
-            <TableColumn fx:id="colunaIdade" prefWidth="43.0" text="Idade" />
-            <TableColumn fx:id="colunaDescribe" minWidth="0.0" prefWidth="152.0" text="Descrição" />
+          <TableColumn fx:id="colunaAnimal_id" prefWidth="52.0" style="-fx-background-color: #f5dab0;" text="Código" />
+          <TableColumn fx:id="colunaOng_id" prefWidth="101.0" style="-fx-background-color: #f5dab0;" text="Código da Ong" />
+            <TableColumn fx:id="colunaTipo_animal" prefWidth="57.0" style="-fx-background-color: #f5dab0;" text="Tipo" />
+            <TableColumn fx:id="colunaRaca" prefWidth="74.0" style="-fx-background-color: #f5dab0;" text="Raça" />
+            <TableColumn fx:id="colunaSexo_animal" prefWidth="79.0" style="-fx-background-color: #f5dab0;" text="Sexo" />
+            <TableColumn fx:id="colunaPorte" prefWidth="85.0" style="-fx-background-color: #f5dab0;" text="Porte" />
+            <TableColumn fx:id="colunaIdade" prefWidth="43.0" style="-fx-background-color: #f5dab0;" text="Idade" />
+            <TableColumn fx:id="colunaDescribe" minWidth="0.0" prefWidth="152.0" style="-fx-background-color: #f5dab0;" text="Descrição" />
         </columns>
       </TableView>
-      <Button layoutX="660.0" layoutY="14.0" mnemonicParsing="false" onAction="#novo" prefHeight="25.0" prefWidth="50.0" text="Novo" />
-      <Button layoutX="660.0" layoutY="49.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="50.0" text="Editar" />
-      <Button layoutX="660.0" layoutY="80.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="50.0" text="Excluir" />
-      <Button layoutX="654.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="660.0" layoutY="14.0" mnemonicParsing="false" onAction="#novo" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #f5dab0;" text="Novo" />
+      <Button layoutX="660.0" layoutY="49.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #f5dab0;" text="Editar" />
+      <Button layoutX="660.0" layoutY="80.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #f5dab0;" text="Excluir" />
+      <Button layoutX="654.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #f5dab0;" text="Voltar" />
    </children>
 </AnchorPane>

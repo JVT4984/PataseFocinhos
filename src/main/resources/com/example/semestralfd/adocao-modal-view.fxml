@@ -6,19 +6,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoModalController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoModalController">
    <children>
       <Label layoutX="20.0" layoutY="34.0" text="Código da Adoçao" />
-      <TextField fx:id="adocao_idFild" layoutX="131.0" layoutY="30.0" prefHeight="25.0" prefWidth="450.0" />
+      <TextField fx:id="adocao_idFild" layoutX="131.0" layoutY="30.0" prefHeight="25.0" prefWidth="450.0" style="-fx-background-color: #f5dab0;" />
       <Label layoutX="29.0" layoutY="70.0" text="Código da Ong" />
-      <TextField fx:id="adocao_ongiidFild" layoutX="131.0" layoutY="66.0" prefHeight="25.0" prefWidth="450.0" />
+      <TextField fx:id="adocao_ongiidFild" layoutX="131.0" layoutY="66.0" prefHeight="25.0" prefWidth="450.0" style="-fx-background-color: #f5dab0;" />
       <Label layoutX="20.0" layoutY="106.0" text="Código do Usuario" />
-      <TextField fx:id="adocao_usuarioidFIld" layoutX="131.0" layoutY="102.0" prefHeight="25.0" prefWidth="450.0" />
+      <TextField fx:id="adocao_usuarioidFIld" layoutX="131.0" layoutY="102.0" prefHeight="25.0" prefWidth="450.0" style="-fx-background-color: #f5dab0;" />
       <Label layoutX="22.0" layoutY="141.0" text="Código do Animal" />
-      <TextField fx:id="adocao_animalidFild" layoutX="131.0" layoutY="137.0" prefHeight="25.0" prefWidth="450.0" />
+      <TextField fx:id="adocao_animalidFild" layoutX="131.0" layoutY="137.0" prefHeight="25.0" prefWidth="450.0" style="-fx-background-color: #f5dab0;" />
       <Label layoutX="27.0" layoutY="179.0" text="Data da Adoção" />
-      <Button layoutX="466.0" layoutY="361.0" mnemonicParsing="false" onAction="#adotar" text="Adotar" />
-      <Button layoutX="529.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelarAdocoa" text="Cancelar" />
-      <DatePicker fx:id="adocao_dtFild" layoutX="131.0" layoutY="175.0" />
+      <Button layoutX="466.0" layoutY="361.0" mnemonicParsing="false" onAction="#adotar" style="-fx-background-color: #f5dab0;" text="Adotar" />
+      <Button layoutX="529.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelarAdocoa" style="-fx-background-color: #f5dab0;" text="Cancelar" />
+      <DatePicker fx:id="adocao_dtFild" layoutX="131.0" layoutY="175.0" style="-fx-background-color: #f5dab0;" />
    </children>
 </AnchorPane>

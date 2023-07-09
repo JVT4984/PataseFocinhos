@@ -7,15 +7,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="292.0" prefWidth="269.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.LoginController">
+<VBox alignment="CENTER" prefHeight="292.0" prefWidth="269.0" spacing="20.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.LoginController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <TextField fx:id="usuarioFild" />
-   <PasswordField fx:id="senhaFild" />
+   <TextField fx:id="usuarioFild" style="-fx-background-color: #f5dab0;" />
+   <PasswordField fx:id="senhaFild" style="-fx-background-color: #f5dab0;" />
    <Label fx:id="lableEntrar" />
-    <Button onAction="#entrar" text="Entrar" />
+    <Button onAction="#entrar" style="-fx-background-color: #f5dab0;" text="Entrar" />
    <Label />
-   <Button mnemonicParsing="false" onAction="#cadastrarUsuario" text="Cadastrar Usuário" />
-   <Button mnemonicParsing="false" onAction="#cadastrarOng" text="Cadastrar ONG" />
+   <Button mnemonicParsing="false" onAction="#cadastrarUsuario" style="-fx-background-color: #f5dab0;" text="Cadastrar Usuário" />
+   <Button mnemonicParsing="false" onAction="#cadastrarOng" style="-fx-background-color: #f5dab0;" text="Cadastrar ONG" />
 </VBox>
