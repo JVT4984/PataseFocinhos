@@ -71,7 +71,12 @@ public class OngController implements Initializable {
         }
 
         }else {
-            System.out.println("Vc não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para deletar contas de outras ongs");
+
+            alert.showAndWait();
         }
     }
 
@@ -99,7 +104,12 @@ public class OngController implements Initializable {
             tabelaOng.refresh();
             new OngDAO().update(ongEditada);
         }else {
-            System.out.println("Vc não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para editar contas de outras ongs");
+
+            alert.showAndWait();
         }
     }
 

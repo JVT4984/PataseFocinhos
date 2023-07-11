@@ -10,5 +10,8 @@
       <Button layoutX="23.0" layoutY="60.0" mnemonicParsing="false" onAction="#entrarUsuarios" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #f5dab0;" text="Usuários" />
       <Button layoutX="23.0" layoutY="100.0" mnemonicParsing="false" onAction="#entrarOngs" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #f5dab0;" text="Ongs" />
       <Button layoutX="23.0" layoutY="141.0" mnemonicParsing="false" onAction="#fazerAdocoes" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #f5dab0;" text="Adoçoẽs" />
+      <Button layoutX="171.0" layoutY="24.0" mnemonicParsing="false" onAction="#verAdocoes" prefHeight="25.0" prefWidth="86.0" text="Ver Adoções" />
+      <Button layoutX="171.0" layoutY="73.0" mnemonicParsing="false" onAction="#verUsuario" prefHeight="25.0" prefWidth="86.0" text="Ver Usuários" />
+      <Button layoutX="171.0" layoutY="125.0" mnemonicParsing="false" onAction="#verOng" prefHeight="25.0" prefWidth="86.0" text="Ver Ongs" />
    </children>
 </AnchorPane>

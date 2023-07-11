@@ -15,41 +15,54 @@ import java.util.ResourceBundle;
 
 public class AdocaoController implements Initializable {
     @FXML
-    TableView<Adocao> tabelaAdocoes;
+    TableView<Animal> tabelaAnimal;
 
     @FXML
-    TableColumn<Adocao, Integer> colunaAdocao_id;
+    TableColumn<Animal, Integer> colunaAnimal_id;
 
     @FXML
-    TableColumn<Adocao, Integer> colunaUsuarioid;
+    TableColumn<Animal, Integer> colunaOng_id;
 
     @FXML
-    TableColumn<Adocao, Integer> colunaOng_id;
+    TableColumn<Animal, String> colunaTipo_animal;
 
     @FXML
-    TableColumn<Adocao, Integer> colunaAnimal_id;
+    TableColumn<Animal, String> colunaRaca;
 
     @FXML
-    TableColumn<Adocao,Date> colunaData_adocao;
+    TableColumn<Animal,String> colunaSexo_animal;
+
+    @FXML
+    TableColumn<Animal, String> colunaPorte;
+
+    @FXML
+    TableColumn<Animal, Integer> colunaIdade;
+
+    @FXML
+    TableColumn<Animal, String> colunaDescribe;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        colunaAdocao_id.setCellValueFactory(new PropertyValueFactory<>("adocao_id"));
-        colunaUsuarioid.setCellValueFactory(new PropertyValueFactory<>("usuario_usuario_id"));
-        colunaOng_id.setCellValueFactory(new PropertyValueFactory<>("ong_ong_id"));
-        colunaAnimal_id.setCellValueFactory(new PropertyValueFactory<>("animal_animal_id"));
-        colunaData_adocao.setCellValueFactory(new PropertyValueFactory<>("data_adocao"));
+        colunaAnimal_id.setCellValueFactory(new PropertyValueFactory<>("animal_id"));
+        colunaOng_id.setCellValueFactory(new PropertyValueFactory<>("ong_id"));
+        colunaTipo_animal.setCellValueFactory(new PropertyValueFactory<>("tipo_animal"));
+        colunaRaca.setCellValueFactory(new PropertyValueFactory<>("raca"));
+        colunaSexo_animal.setCellValueFactory(new PropertyValueFactory<>("sexo_animal"));
+        colunaPorte.setCellValueFactory(new PropertyValueFactory<>("porte"));
+        colunaIdade.setCellValueFactory(new PropertyValueFactory<>("idade_animal"));
+        colunaDescribe.setCellValueFactory(new PropertyValueFactory<>("describe"));
 
-        AdocaoDAO adocaoDAO = new AdocaoDAO();
+        AnimalDAO animalDAO = new AnimalDAO();
         try {
-            List<Adocao> adocaos = adocaoDAO.getAdocoes();
-            tabelaAdocoes.getItems().addAll(adocaos);
+            List<Animal> animais = animalDAO.getAll();
+            tabelaAnimal.getItems().addAll(animais);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    @FXML
+
+     @FXML
     public void adotar() throws IOException {
         HelloApplication.showModal("adocao-modal-view");
     }

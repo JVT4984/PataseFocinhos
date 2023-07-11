@@ -1,6 +1,8 @@
 package com.example.semestralfd;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+
 import java.io.IOException;
 
 public class MainController {
@@ -10,7 +12,12 @@ public class MainController {
             HelloApplication.setRoot("animal-view");
         }
         else {
-            System.out.println("Vc não tem permição");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Apenas ongs tem permissão para gerenciar animais");
+
+            alert.showAndWait();
         }
     }
 
@@ -30,7 +37,12 @@ public class MainController {
         if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3){
             HelloApplication.setRoot("ong-view");
         }else {
-            System.out.println("vc não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para gerenciar ongs");
+
+            alert.showAndWait();
         }
     }
 
@@ -38,7 +50,12 @@ public class MainController {
         if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == 2) {
             HelloApplication.setRoot("usuario-view");
         } else {
-            System.out.printf("Vc Não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para gerenciar usuarios");
+
+            alert.showAndWait();
         }
     }
 
@@ -46,7 +63,23 @@ public class MainController {
         if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == 2){
             HelloApplication.setRoot("adocao-view");
         }else {
-            System.out.println("Vc não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Apenas usuarios podem fazer adoções");
+
+            alert.showAndWait();
         }
+    }
+
+    public void verAdocoes() throws  IOException {
+        HelloApplication.setRoot("ver-adocao-view");
+    }
+
+    public void verUsuario() throws IOException {
+        HelloApplication.showModal("ver-usuarios-view");
+    }
+    public void verOng() throws IOException{
+        HelloApplication.showModal("ver-ongs-view");
     }
 }

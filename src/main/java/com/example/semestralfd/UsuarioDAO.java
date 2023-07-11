@@ -63,7 +63,6 @@ public class UsuarioDAO {
             preparedStatement.execute();
         }
     }
-
     public void delete(Usuario deleteUsuario) throws SQLException {
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement("delete from usuario where usuario_id = ?")) {
             preparedStatement.setInt(1, deleteUsuario.usuario_id);
@@ -71,7 +70,6 @@ public class UsuarioDAO {
 
         }
     }
-
     public void update (Usuario editUsuario) throws SQLException {
         String sql = "update usuario SET endereco_endereco_id = ?, usuario_login = ?, usuario_senha = ?, usuario_nome = ?, usuario_num = ?, usuario_email = ?" +
                 " where usuario_id = ?";
@@ -86,7 +84,6 @@ public class UsuarioDAO {
             preparedStatement.execute();
         }
     }
-
     public static Usuario getUsuario(Usuario usuario) throws SQLException {
         String sql =  "select * from usuario where usuario_login = ? AND usuario_senha = ? ";
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql)) {

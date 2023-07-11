@@ -104,7 +104,12 @@ public class AnimalController implements Initializable {
                 tabelaAnimal.getItems().remove(animalSelecionado);
             }
         }else {
-            System.out.println("Vc não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para deletar animais de outras ongs");
+
+            alert.showAndWait();
         }
     }
 
@@ -132,7 +137,12 @@ public class AnimalController implements Initializable {
         new AnimalDAO().update(animalEditado);
 
         }else {
-            System.out.println("Vc não tem permissão");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para editar animais de outras ongs");
+
+            alert.showAndWait();
         }
     }
 
