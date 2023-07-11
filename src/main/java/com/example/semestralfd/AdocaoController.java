@@ -61,8 +61,14 @@ public class AdocaoController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    @FXML
+
+     @FXML
     public void adotar() throws IOException {
         HelloApplication.showModal("adocao-modal-view");
+    }
+
+    @FXML
+    public void voltar() throws  IOException {
+        HelloApplication.setRoot("main-view");
     }
 }

@@ -5,19 +5,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.OngController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.OngController">
    <children>
-      <TableView fx:id="tabelaOng" prefHeight="400.0" prefWidth="508.0">
+      <TableView fx:id="tabelaOng" prefHeight="400.0" prefWidth="508.0" style="-fx-background-color: #f7a220;">
         <columns>
-          <TableColumn fx:id="colunaOng_id" prefWidth="89.0" text="C1" />
-          <TableColumn fx:id="colunaOng_nome" prefWidth="97.0" text="C2" />
-            <TableColumn fx:id="colunaOng_telefone" prefWidth="98.0" text="C2" />
-            <TableColumn fx:id="colunaOng_email" prefWidth="104.0" text="C2" />
-            <TableColumn fx:id="colunaOng_endereco" prefWidth="119.0" text="C2" />
+          <TableColumn fx:id="colunaOng_id" prefWidth="89.0" style="-fx-background-color: #f5dab0;" text="C1" />
+          <TableColumn fx:id="colunaOng_nome" prefWidth="97.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaOng_telefone" prefWidth="98.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaOng_email" prefWidth="104.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaOng_endereco" prefWidth="119.0" style="-fx-background-color: #f5dab0;" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="534.0" layoutY="23.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
-      <Button layoutX="532.0" layoutY="56.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-      <Button layoutX="533.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="534.0" layoutY="23.0" mnemonicParsing="false" onAction="#editar" style="-fx-background-color: #f5dab0;" text="Editar" />
+      <Button layoutX="532.0" layoutY="56.0" mnemonicParsing="false" onAction="#excluir" style="-fx-background-color: #f5dab0;" text="Excluir" />
+      <Button layoutX="533.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #f5dab0;" text="Voltar" />
    </children>
 </AnchorPane>

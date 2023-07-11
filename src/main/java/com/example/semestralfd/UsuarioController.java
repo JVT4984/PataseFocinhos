@@ -59,20 +59,29 @@ public class UsuarioController implements Initializable {
 
         //Obter o produto selecionada
         Usuario usuarioSelecionado = tabela_Usuario.getSelectionModel().getSelectedItem();
+        if (UsuarioSingleton.getUsuarioSingleton().getUsuario_id() == usuarioSelecionado.getUsuario_id()) {
 
-        //Confirmação de exclusão
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Você realmente deseja exluir a sua conta" + usuarioSelecionado.usuario_nome);
-        alert.setHeaderText(null);
-        alert.setContentText("Deseja excluir a conta?");
+            //Confirmação de exclusão
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Você realmente deseja exluir a sua conta" + usuarioSelecionado.usuario_nome);
+            alert.setHeaderText(null);
+            alert.setContentText("Deseja excluir a conta?");
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
 
-            UsuarioDAO delete = new UsuarioDAO();
-            delete.delete(usuarioSelecionado);
-            // Excluir o produto
-            tabela_Usuario.getItems().remove(usuarioSelecionado);
+                UsuarioDAO delete = new UsuarioDAO();
+                delete.delete(usuarioSelecionado);
+                // Excluir o produto
+                tabela_Usuario.getItems().remove(usuarioSelecionado);
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para deletar contas de outros usuarios");
+
+            alert.showAndWait();
         }
     }
 
@@ -81,23 +90,32 @@ public class UsuarioController implements Initializable {
         Usuario usuarioSelecionado = tabela_Usuario.getSelectionModel().getSelectedItem();
 
         UsuarioModalController.usuario = usuarioSelecionado;
+        if (UsuarioSingleton.getUsuarioSingleton().getUsuario_id() == usuarioSelecionado.getUsuario_id()) {
 
-        HelloApplication.showModal("ong-modal-view");
+            HelloApplication.showModal("ong-modal-view");
 
-        // O modal foi fechado
+            // O modal foi fechado
 
-        Usuario usuarioEditado = UsuarioModalController.usuario;
+            Usuario usuarioEditado = UsuarioModalController.usuario;
 
-        usuarioSelecionado.usuario_id = usuarioEditado.usuario_id;
-        usuarioSelecionado.usuario_login = usuarioEditado.usuario_login;
-        usuarioSelecionado.usuario_senha = usuarioEditado.usuario_senha;
-        usuarioSelecionado.usuario_nome = usuarioEditado.usuario_nome;
-        usuarioSelecionado.usuario_email = usuarioEditado.usuario_email;
-        usuarioSelecionado.usuario_numero= usuarioEditado.usuario_numero;
-        usuarioSelecionado.usuario_endereco_id= usuarioEditado.usuario_endereco_id;
+            usuarioSelecionado.usuario_id = usuarioEditado.usuario_id;
+            usuarioSelecionado.usuario_login = usuarioEditado.usuario_login;
+            usuarioSelecionado.usuario_senha = usuarioEditado.usuario_senha;
+            usuarioSelecionado.usuario_nome = usuarioEditado.usuario_nome;
+            usuarioSelecionado.usuario_email = usuarioEditado.usuario_email;
+            usuarioSelecionado.usuario_numero = usuarioEditado.usuario_numero;
+            usuarioSelecionado.usuario_endereco_id = usuarioEditado.usuario_endereco_id;
 
-        tabela_Usuario.refresh();
-        new UsuarioDAO().update(usuarioEditado);
+            tabela_Usuario.refresh();
+            new UsuarioDAO().update(usuarioEditado);
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Atenção");
+            alert.setHeaderText(null);
+            alert.setContentText("Você não tem permissão para editar as contas de outros usuarios");
+
+            alert.showAndWait();
+        }
     }
 
     @FXML

@@ -6,29 +6,26 @@ import java.util.List;
 
 public class AdocaoDAO {
 
-    public List<Animal> getAll() throws SQLException {
+    public List<Adocao> getAdocoes() throws SQLException {
         try (Statement statement = ConnectionSingleton.getConnection().createStatement();
-             ResultSet rs = statement.executeQuery("select * from animal;")) {
-            List<Animal> animais = new ArrayList<>();
+             ResultSet rs = statement.executeQuery("select * from adocoes;")) {
+            List<Adocao> adocaos = new ArrayList<>();
             while (rs.next()) {
-                Animal animal = new Animal();
-                animal.animal_id = rs.getInt(1);
-                animal.ong_id = rs.getInt(2);
-                animal.tipo_animal = rs.getString(3);
-                animal.raca_animal = rs.getString(4);
-                animal.sexo_animal = rs.getString(5);
-                animal.porte = rs.getString(6);
-                animal.idade_animal = rs.getInt(7);
-                animal.describe = rs.getString(8);
-                animais.add(animal);
+                Adocao adocao = new Adocao();
+                adocao.adocao_id = rs.getInt(1);
+                adocao.adocao_usuario_id = rs.getInt(2);
+                adocao.adocao_ong_id = rs.getInt(3);
+                adocao.adocao_animal_id = rs.getInt(4);
+                adocao.data_adocao = rs.getDate(5);
+
             }
-            return animais;
+            return adocaos;
         }
 
     }
 
     public void insertAdocao(Adocao novaAdocao) throws SQLException {
-        String sql = "insert into adocao (adocao_id, usuario_usuario_id, ong_ong_id, animal_animal_id, data_adocao) values (?, ?, ?, ?, ?)";
+        String sql = "insert into adocoes (adocao_id, usuario_usuario_id, ong_ong_id, animal_animal_id, data_adocao) values (?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql);){
             preparedStatement.setInt(1, novaAdocao.adocao_id);
             preparedStatement.setInt(2, novaAdocao.adocao_usuario_id);

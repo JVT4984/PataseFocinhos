@@ -46,7 +46,7 @@ public class UsuarioModalController implements Initializable {
 
         new UsuarioDAO().insertUsuario(novoUsuario);
 
-        HelloApplication.setRoot("hello-view");
+        HelloApplication.closeCurrentWindow();
     }
 
 
@@ -62,7 +62,7 @@ public class UsuarioModalController implements Initializable {
 
         if (usuarioSelecionado != null) {
             usuario_idFild.setText(Integer.toString(usuarioSelecionado.usuario_id));
-            usuario_loginFild.setText(usuarioSelecionado.usuario_login);
+            usuario_loginFild.setText((usuarioSelecionado.usuario_login));
             usuario_senhaFild.setText(usuarioSelecionado.usuario_senha);
             usuario_nomeFild.setText(usuarioSelecionado.usuario_nome);
             usuario_numeroFild.setText(usuarioSelecionado.usuario_numero);

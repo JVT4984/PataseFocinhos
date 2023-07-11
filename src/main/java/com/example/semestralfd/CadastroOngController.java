@@ -51,7 +51,7 @@ public class CadastroOngController {
 
         new OngDAO().insertOng(novaOng);
 
-        HelloApplication.setRoot("hello-view");
+        HelloApplication.closeCurrentWindow();
     }
 
 

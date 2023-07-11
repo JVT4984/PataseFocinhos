@@ -5,20 +5,21 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoController">
+<AnchorPane prefHeight="400.0" prefWidth="731.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoController">
    <children>
-      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="602.0">
-        <columns>
-          <TableColumn fx:id="colunaAnimal_id" prefWidth="75.0" text="C1" />
-          <TableColumn fx:id="colunaOng_id" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaTipo_animal" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaRaca" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaSexo_animal" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaPorte" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaIdade" prefWidth="75.0" text="C2" />
-            <TableColumn fx:id="colunaDescribe" prefWidth="75.0" text="C2" />
-        </columns>
+      <Button layoutX="662.0" layoutY="30.0" mnemonicParsing="false" onAction="#adotar" style="-fx-background-color: #f5dab0;" text="Adotar" />
+      <Button layoutX="664.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #f5dab0;" text="Voltar" />
+      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="645.0" style="-fx-background-color: #f7a220;">
+         <columns>
+            <TableColumn fx:id="colunaAnimal_id" prefWidth="52.0" style="-fx-background-color: #f5dab0;" text="Código" />
+            <TableColumn fx:id="colunaOng_id" prefWidth="101.0" style="-fx-background-color: #f5dab0;" text="Código da Ong" />
+            <TableColumn fx:id="colunaTipo_animal" prefWidth="57.0" style="-fx-background-color: #f5dab0;" text="Tipo" />
+            <TableColumn fx:id="colunaRaca" prefWidth="74.0" style="-fx-background-color: #f5dab0;" text="Raça" />
+            <TableColumn fx:id="colunaSexo_animal" prefWidth="79.0" style="-fx-background-color: #f5dab0;" text="Sexo" />
+            <TableColumn fx:id="colunaPorte" prefWidth="85.0" style="-fx-background-color: #f5dab0;" text="Porte" />
+            <TableColumn fx:id="colunaIdade" prefWidth="43.0" style="-fx-background-color: #f5dab0;" text="Idade" />
+            <TableColumn fx:id="colunaDescribe" minWidth="0.0" prefWidth="152.0" style="-fx-background-color: #f5dab0;" text="Descrição" />
+         </columns>
       </TableView>
-      <Button layoutX="609.0" layoutY="14.0" mnemonicParsing="false" onAction="#adotar" text="Adotar" />
    </children>
 </AnchorPane>
