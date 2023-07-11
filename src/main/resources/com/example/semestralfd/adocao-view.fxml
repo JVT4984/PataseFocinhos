@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="599.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoController">
+<AnchorPane prefHeight="400.0" prefWidth="599.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AdocaoController">
    <children>
-      <TableView fx:id="tabelaAdocao" prefHeight="400.0" prefWidth="521.0" style="-fx-background-color: #f7a220;">
+      <TableView fx:id="tabelaAdocoes" prefHeight="400.0" prefWidth="521.0" style="-fx-background-color: #f7a220;">
         <columns>
           <TableColumn fx:id="colunaAdocao_id" prefWidth="85.0" text="C1" />
           <TableColumn fx:id="colunaUsuarioid" prefWidth="89.0" text="C2" />

@@ -8,7 +8,7 @@ public class AdocaoDAO {
 
     public List<Adocao> getAdocoes() throws SQLException {
         try (Statement statement = ConnectionSingleton.getConnection().createStatement();
-             ResultSet rs = statement.executeQuery("select * from adocao;")) {
+             ResultSet rs = statement.executeQuery("select * from adocoes;")) {
             List<Adocao> adocaos = new ArrayList<>();
             while (rs.next()) {
                 Adocao adocao = new Adocao();

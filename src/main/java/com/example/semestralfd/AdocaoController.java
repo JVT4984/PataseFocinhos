@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class AdocaoController implements Initializable {
     @FXML
-    TableView<Adocao> tabelaAdocao;
+    TableView<Adocao> tabelaAdocoes;
 
     @FXML
     TableColumn<Adocao, Integer> colunaAdocao_id;
@@ -44,7 +44,7 @@ public class AdocaoController implements Initializable {
         AdocaoDAO adocaoDAO = new AdocaoDAO();
         try {
             List<Adocao> adocaos = adocaoDAO.getAdocoes();
-            tabelaAdocao.getItems().addAll(adocaos);
+            tabelaAdocoes.getItems().addAll(adocaos);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
