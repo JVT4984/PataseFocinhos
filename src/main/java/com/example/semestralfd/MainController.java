@@ -8,10 +8,9 @@ import java.io.IOException;
 public class MainController {
     @FXML
     public void entrarAnimal() throws IOException {
-        if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3){
+        if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3) {
             HelloApplication.setRoot("animal-view");
-        }
-        else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Atenção");
             alert.setHeaderText(null);
@@ -34,9 +33,9 @@ public class MainController {
 
     @FXML
     public void entrarOngs() throws IOException {
-        if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3){
+        if (OngSingleton.getOngSingleton().getNivelDeAcesso() == 3) {
             HelloApplication.setRoot("ong-view");
-        }else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Atenção");
             alert.setHeaderText(null);
@@ -60,9 +59,9 @@ public class MainController {
     }
 
     public void fazerAdocoes() throws IOException {
-        if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == 2){
+        if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == 2) {
             HelloApplication.setRoot("adocao-view");
-        }else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Atenção");
             alert.setHeaderText(null);
@@ -72,14 +71,27 @@ public class MainController {
         }
     }
 
-    public void verAdocoes() throws  IOException {
+    public void verAdocoes() throws IOException {
         HelloApplication.setRoot("ver-adocao-view");
     }
 
     public void verUsuario() throws IOException {
         HelloApplication.showModal("ver-usuarios-view");
     }
-    public void verOng() throws IOException{
+
+    public void verOng() throws IOException {
         HelloApplication.showModal("ver-ongs-view");
+    }
+
+    public void relatorioUsuario() throws IOException {
+        HelloApplication.showModal("relatorio-usuarios-view");
+    }
+
+    public void relatorioOng() throws IOException {
+        HelloApplication.showModal("relatorio-ong-view");
+    }
+
+    public void relatorioAdocao() throws IOException {
+        HelloApplication.showModal("relatorio-adocao-view");
     }
 }

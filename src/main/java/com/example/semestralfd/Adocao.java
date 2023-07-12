@@ -5,13 +5,9 @@ import java.util.Date;
 public class Adocao {
 
     public int adocao_id;
-
     public int adocao_usuario_id;
-
     public int adocao_ong_id;
-
     public int adocao_animal_id;
-
     public Date data_adocao;
 
     public int getAdocao_id() {

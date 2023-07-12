@@ -5,7 +5,6 @@ import java.util.Date;
 public class Animal {
 
     public int animal_id;
-
     public int ong_id;
     public String tipo_animal;
     public String raca_animal;
@@ -23,7 +22,9 @@ public class Animal {
         this.animal_id = animal_id;
     }
 
-    public int getOng_id() {return ong_id;}
+    public int getOng_id() {
+        return ong_id;
+    }
 
     public void setOng_id(int ong_id) {
         this.ong_id = ong_id;
@@ -65,7 +66,7 @@ public class Animal {
         return idade_animal;
     }
 
-    public void setIdade_animal(int idade) {
+    public void setIdade_animal(int idade_animal) {
         this.idade_animal = idade_animal;
     }
 
@@ -77,7 +78,11 @@ public class Animal {
         this.describe = describe;
     }
 
-    public Date getAnimal_dt_cadastro() {return animal_dt_cadastro;}
+    public Date getAnimal_dt_cadastro() {
+        return animal_dt_cadastro;
+    }
 
-    public void setAnimal_dt_cadastro(Date animal_dt_cadastro) {this.animal_dt_cadastro = animal_dt_cadastro;}
+    public void setAnimal_dt_cadastro(Date animal_dt_cadastro) {
+        this.animal_dt_cadastro = animal_dt_cadastro;
+    }
 }

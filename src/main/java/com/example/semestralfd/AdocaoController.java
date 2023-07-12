@@ -30,7 +30,7 @@ public class AdocaoController implements Initializable {
     TableColumn<Animal, String> colunaRaca;
 
     @FXML
-    TableColumn<Animal,String> colunaSexo_animal;
+    TableColumn<Animal, String> colunaSexo_animal;
 
     @FXML
     TableColumn<Animal, String> colunaPorte;
@@ -43,7 +43,6 @@ public class AdocaoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         colunaAnimal_id.setCellValueFactory(new PropertyValueFactory<>("animal_id"));
         colunaOng_id.setCellValueFactory(new PropertyValueFactory<>("ong_id"));
         colunaTipo_animal.setCellValueFactory(new PropertyValueFactory<>("tipo_animal"));
@@ -62,13 +61,13 @@ public class AdocaoController implements Initializable {
         }
     }
 
-     @FXML
+    @FXML
     public void adotar() throws IOException {
         HelloApplication.showModal("adocao-modal-view");
     }
 
     @FXML
-    public void voltar() throws  IOException {
+    public void voltar() throws IOException {
         HelloApplication.setRoot("main-view");
     }
 }

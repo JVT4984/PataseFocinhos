@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioUsuarioController">
+   <children>
+      <TableView fx:id="tabela_RelatorioUsuario" prefHeight="400.0" prefWidth="523.0">
+        <columns>
+          <TableColumn fx:id="colunaRelatorioUsuario_id" prefWidth="74.0" text="C1" />
+          <TableColumn fx:id="colunaRelatorioUsuario_nome" text="C2" />
+            <TableColumn fx:id="colunaRelatorioUsuario_numero" prefWidth="83.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioUsuario_email" prefWidth="94.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioUsuario_endereco" prefWidth="97.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorio_dtcadastro" prefWidth="94.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="538.0" layoutY="361.0" mnemonicParsing="false" text="Fechar" />
+   </children>
+</AnchorPane>

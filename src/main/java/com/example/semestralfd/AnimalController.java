@@ -34,7 +34,7 @@ public class AnimalController implements Initializable {
     TableColumn<Animal, String> colunaRaca;
 
     @FXML
-    TableColumn<Animal,String> colunaSexo_animal;
+    TableColumn<Animal, String> colunaSexo_animal;
 
     @FXML
     TableColumn<Animal, String> colunaPorte;
@@ -47,7 +47,6 @@ public class AnimalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         colunaAnimal_id.setCellValueFactory(new PropertyValueFactory<>("animal_id"));
         colunaOng_id.setCellValueFactory(new PropertyValueFactory<>("ong_id"));
         colunaTipo_animal.setCellValueFactory(new PropertyValueFactory<>("tipo_animal"));
@@ -69,46 +68,40 @@ public class AnimalController implements Initializable {
     @FXML
     public void novo() throws IOException, SQLException {
         AnimalModalController.animal = null;
-
         HelloApplication.showModal("animal-modal-view");
 
         // O modal foi fechado
         Animal novoAnimal = AnimalModalController.animal;
-
-        if(novoAnimal != null)
+        if (novoAnimal != null) {
             tabelaAnimal.getItems().add(novoAnimal);
-
-        AnimalDAO animal = new AnimalDAO();
-        animal.insert(novoAnimal);
+            AnimalDAO animalDAO = new AnimalDAO();
+            animalDAO.insert(novoAnimal);
+        }
     }
 
     @FXML
     public void excluir() throws SQLException {
-
-        //Obter o aniaml selecionada
+        //Obter o animal selecionado
         Animal animalSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
-        if (OngSingleton.getOngSingleton().getOng_id() == animalSelecionado.ong_id) {
-
+        if (OngSingleton.getOngSingleton().getOng_id() == animalSelecionado.getOng_id()) {
             //Confirmação de exclusão
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Excluir produto");
-            alert.setHeaderText("Código do animal: " + animalSelecionado.animal_id + ", Ong: " + animalSelecionado.ong_id + ", Raça: " + animalSelecionado.raca_animal);
+            alert.setHeaderText("Código do animal: " + animalSelecionado.getAnimal_id() + ", Ong: " + animalSelecionado.getOng_id() + ", Raça: " + animalSelecionado.getRaca());
             alert.setContentText("Deseja excluir o animal?");
 
             Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-
+            if (result.isPresent() && result.get() == ButtonType.OK) {
                 AnimalDAO delete = new AnimalDAO();
                 delete.delete(animalSelecionado);
                 // Excluir o animal
                 tabelaAnimal.getItems().remove(animalSelecionado);
             }
-        }else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Atenção");
             alert.setHeaderText(null);
             alert.setContentText("Você não tem permissão para deletar animais de outras ongs");
-
             alert.showAndWait();
         }
     }
@@ -116,32 +109,29 @@ public class AnimalController implements Initializable {
     @FXML
     public void editar() throws IOException, SQLException {
         Animal animalSelecionado = tabelaAnimal.getSelectionModel().getSelectedItem();
-        if (OngSingleton.getOngSingleton().getOng_id() == animalSelecionado.ong_id) {
+        if (OngSingleton.getOngSingleton().getOng_id() == animalSelecionado.getOng_id()) {
+            AnimalModalController.animal = animalSelecionado;
+            HelloApplication.showModal("animal-modal-view");
 
-        AnimalModalController.animal = animalSelecionado;
+            // O modal foi fechado
+            Animal animalEditado = AnimalModalController.animal;
 
-        HelloApplication.showModal("animal-modal-view");
+            animalSelecionado.setAnimal_id(animalEditado.getAnimal_id());
+            animalSelecionado.setOng_id(animalEditado.getOng_id());
+            animalSelecionado.setRaca(animalEditado.getRaca());
+            animalSelecionado.setPorte(animalEditado.getPorte());
+            animalSelecionado.setIdade_animal(animalEditado.getIdade_animal());
+            animalSelecionado.setDescribe(animalEditado.getDescribe());
 
-        // O modal foi fechado
+            tabelaAnimal.refresh();
 
-        Animal animalEditado = AnimalModalController.animal;
-
-        animalSelecionado.animal_id = animalEditado.animal_id;
-        animalSelecionado.ong_id = animalEditado.ong_id;
-        animalSelecionado.raca_animal = animalEditado.raca_animal;
-        animalSelecionado.porte = animalEditado.porte;
-        animalSelecionado.idade_animal = animalEditado.idade_animal;
-        animalSelecionado.describe = animalEditado.describe;
-
-        tabelaAnimal.refresh();
-        new AnimalDAO().update(animalEditado);
-
-        }else {
+            AnimalDAO animalDAO = new AnimalDAO();
+            animalDAO.update(animalEditado);
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Atenção");
             alert.setHeaderText(null);
             alert.setContentText("Você não tem permissão para editar animais de outras ongs");
-
             alert.showAndWait();
         }
     }
@@ -151,4 +141,3 @@ public class AnimalController implements Initializable {
         HelloApplication.setRoot("main-view");
     }
 }
-

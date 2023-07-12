@@ -29,7 +29,7 @@ public class AdocaoModalController {
     @FXML
     public void adotar() throws IOException, SQLException {
         Adocao novaAdocao = new Adocao();
-        if (!adocao_idFild.getText().isBlank()){
+        if (!adocao_idFild.getText().isBlank()) {
             novaAdocao.adocao_id = Integer.parseInt(adocao_idFild.getText());
         }
         novaAdocao.adocao_ong_id = Integer.parseInt(adocao_ongidFild.getText());
@@ -46,9 +46,9 @@ public class AdocaoModalController {
 
         HelloApplication.closeCurrentWindow();
     }
-    @FXML
-    public void cancelarAdocoa() throws IOException {
 
+    @FXML
+    public void cancelarAdocao() throws IOException {
         HelloApplication.closeCurrentWindow();
     }
 }

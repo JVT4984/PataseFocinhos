@@ -26,7 +26,7 @@ public class AdocaoDAO {
 
     public void insertAdocao(Adocao novaAdocao) throws SQLException {
         String sql = "insert into adocoes (adocao_id, usuario_usuario_id, ong_ong_id, animal_animal_id, data_adocao) values (?, ?, ?, ?, ?)";
-        try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql);){
+        try (PreparedStatement preparedStatement = ConnectionSingleton.getConnection().prepareStatement(sql);) {
             preparedStatement.setInt(1, novaAdocao.adocao_id);
             preparedStatement.setInt(2, novaAdocao.adocao_usuario_id);
             preparedStatement.setInt(3, novaAdocao.adocao_ong_id);
@@ -34,9 +34,6 @@ public class AdocaoDAO {
             preparedStatement.setDate(5, (Date) novaAdocao.data_adocao);
 
             preparedStatement.execute();
-
         }
     }
 }
-
-

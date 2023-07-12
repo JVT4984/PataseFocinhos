@@ -13,5 +13,8 @@
       <Button layoutX="171.0" layoutY="24.0" mnemonicParsing="false" onAction="#verAdocoes" prefHeight="25.0" prefWidth="86.0" text="Ver Adoções" />
       <Button layoutX="171.0" layoutY="73.0" mnemonicParsing="false" onAction="#verUsuario" prefHeight="25.0" prefWidth="86.0" text="Ver Usuários" />
       <Button layoutX="171.0" layoutY="125.0" mnemonicParsing="false" onAction="#verOng" prefHeight="25.0" prefWidth="86.0" text="Ver Ongs" />
+      <Button layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#relatorioUsuario" prefHeight="25.0" prefWidth="132.0" text="Relatório de Usuarios" />
+      <Button layoutX="154.0" layoutY="350.0" mnemonicParsing="false" onAction="#relatorioOng" prefHeight="25.0" prefWidth="132.0" text="Relatório de Ongs" />
+      <Button layoutX="293.0" layoutY="350.0" mnemonicParsing="false" onAction="#relatorioAdocao" prefHeight="25.0" prefWidth="132.0" text="Relatório de Adoções" />
    </children>
 </AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioOngController">
+   <children>
+      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="700.0">
+        <columns>
+          <TableColumn fx:id="colunaRelatorioAnimal_id" prefWidth="48.0" text="C1" />
+          <TableColumn fx:id="colunaRelatorioOng_id" prefWidth="53.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioTipo_animal" prefWidth="73.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioRaca" prefWidth="89.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioPorte" prefWidth="85.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioSexo_animal" text="C2" />
+            <TableColumn fx:id="colunaRelatorioIdade" prefWidth="42.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioDescribe" prefWidth="136.0" text="C2" />
+            <TableColumn fx:id="colunaRelatorioDataCadastro" prefWidth="93.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="706.0" layoutY="354.0" mnemonicParsing="false" text="Voltar" />
+   </children>
+</AnchorPane>
