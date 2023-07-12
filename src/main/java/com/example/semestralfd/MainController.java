@@ -23,13 +23,9 @@ public class MainController {
 
     @FXML
     public void sair() throws IOException {
-        if (UsuarioSingleton.getUsuarioSingleton().getNivelDeAcesso() == UsuarioSingleton.getUsuarioSingleton().getUsuario_id()) {
             UsuarioSingleton.getUsuarioSingleton().setNivelDeAcesso(0);
-            HelloApplication.setRoot("hello-view");
-        } else {
             OngSingleton.getOngSingleton().setNivelDeAcesso(0);
             HelloApplication.setRoot("hello-view");
-        }
     }
 
     @FXML

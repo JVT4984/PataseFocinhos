@@ -7,25 +7,25 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane onDragDetected="#cancelar" prefHeight="400.0" prefWidth="702.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.CadastroUsuarioController">
+<AnchorPane onDragDetected="#cancelar" prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.CadastroUsuarioController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="90.0" text="Código" />
-      <Label layoutX="14.0" layoutY="48.0" prefHeight="18.0" prefWidth="90.0" text="Login" />
-      <Label layoutX="14.0" layoutY="87.0" prefHeight="18.0" prefWidth="90.0" text="Senha" />
-      <Label layoutX="14.0" layoutY="125.0" prefHeight="18.0" prefWidth="90.0" text="Nome" />
-      <Label layoutX="14.0" layoutY="162.0" prefHeight="18.0" prefWidth="90.0" text="Telefone" />
-      <Label layoutX="14.0" layoutY="200.0" prefHeight="18.0" prefWidth="90.0" text="Email" />
-      <Label layoutX="14.0" layoutY="237.0" prefHeight="18.0" prefWidth="90.0" text="Endereço" />
-      <TextField fx:id="usuario_idFild" disable="true" layoutX="68.0" layoutY="11.0" prefHeight="25.0" prefWidth="596.0" />
-      <TextField fx:id="usuario_loginFild" layoutX="68.0" layoutY="45.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_nomeFild" layoutX="68.0" layoutY="122.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_numeroFild" layoutX="68.0" layoutY="159.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_emailFild" layoutX="68.0" layoutY="197.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_enderecoFild" layoutX="68.0" layoutY="234.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <PasswordField fx:id="usuario_senhaFild" layoutX="68.0" layoutY="84.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <Button layoutX="570.0" layoutY="361.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #f5dab0;" text="Salvar" />
-      <Button layoutX="636.0" layoutY="361.0" mnemonicParsing="false" style="-fx-background-color: #f5dab0;" text="Cancelar" />
-      <Label layoutX="13.0" layoutY="279.0" text="Data do Cadastro" />
-      <DatePicker fx:id="usuario_dt_Fild" layoutX="115.0" layoutY="275.0" style="-fx-background-color: #f5dab0;" />
+      <Label layoutX="9.0" layoutY="47.0" prefHeight="18.0" prefWidth="90.0" text="Código" />
+      <Label layoutX="9.0" layoutY="81.0" prefHeight="18.0" prefWidth="90.0" text="Login" />
+      <Label layoutX="9.0" layoutY="120.0" prefHeight="18.0" prefWidth="90.0" text="Senha" />
+      <Label layoutX="9.0" layoutY="158.0" prefHeight="18.0" prefWidth="90.0" text="Nome" />
+      <Label layoutX="9.0" layoutY="195.0" prefHeight="18.0" prefWidth="90.0" text="Telefone" />
+      <Label layoutX="9.0" layoutY="233.0" prefHeight="18.0" prefWidth="90.0" text="Email" />
+      <Label layoutX="9.0" layoutY="270.0" prefHeight="18.0" prefWidth="90.0" text="Endereço" />
+      <TextField fx:id="usuario_idFild" disable="true" layoutX="63.0" layoutY="44.0" prefHeight="25.0" prefWidth="596.0" />
+      <TextField fx:id="usuario_loginFild" layoutX="63.0" layoutY="78.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
+      <TextField fx:id="usuario_nomeFild" layoutX="63.0" layoutY="155.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
+      <TextField fx:id="usuario_numeroFild" layoutX="63.0" layoutY="192.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
+      <TextField fx:id="usuario_emailFild" layoutX="63.0" layoutY="230.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
+      <TextField fx:id="usuario_enderecoFild" layoutX="63.0" layoutY="267.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
+      <PasswordField fx:id="usuario_senhaFild" layoutX="63.0" layoutY="117.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
+      <Button layoutX="541.0" layoutY="349.0" mnemonicParsing="false" onAction="#salvar" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #f5dab0;" text="Salvar" />
+      <Button layoutX="643.0" layoutY="349.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #f5dab0;" text="Cancelar" />
+      <Label layoutX="8.0" layoutY="312.0" text="Data do Cadastro" />
+      <DatePicker fx:id="usuario_dt_Fild" layoutX="110.0" layoutY="308.0" style="-fx-background-color: #f5dab0;" />
    </children>
 </AnchorPane>

@@ -17,8 +17,10 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("hello-view"), 600, 500);
+        scene = new Scene(loadFXML("hello-view"), 750, 450);
         stage.setScene(scene);
+        stage.setMaximized(false);
+        stage.setResizable(false);
         stage.show();
     }
 

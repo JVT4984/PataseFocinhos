@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane onDragDetected="#cancelar" prefHeight="400.0" prefWidth="702.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.CadastroOngController">
+<AnchorPane onDragDetected="#cancelar" prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.CadastroOngController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="90.0" text="Código" />
       <Label layoutX="14.0" layoutY="48.0" prefHeight="18.0" prefWidth="90.0" text="Login" />
@@ -23,8 +23,8 @@
       <TextField fx:id="ong_emailFild" layoutX="68.0" layoutY="197.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
       <TextField fx:id="ong_enderecoFild" layoutX="68.0" layoutY="234.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
       <PasswordField fx:id="ong_senhaFild" layoutX="68.0" layoutY="84.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <Button layoutX="570.0" layoutY="361.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #f5dab0;" text="Salvar" />
-      <Button layoutX="636.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #f5dab0;" text="Cancelar" />
+      <Button layoutX="525.0" layoutY="349.0" mnemonicParsing="false" onAction="#salvar" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #f5dab0;" text="Salvar" />
+      <Button layoutX="641.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #f5dab0;" text="Cancelar" />
       <Label layoutX="13.0" layoutY="277.0" text="Data do Cadastro" />
       <DatePicker fx:id="ong_dt_Fild" layoutX="112.0" layoutY="273.0" />
    </children>

@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="724.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AnimalController">
+<AnchorPane prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.AnimalController">
    <children>
       <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #f7a220;">
         <columns>
@@ -19,9 +19,9 @@
             <TableColumn fx:id="colunaDescribe" minWidth="0.0" prefWidth="152.0" style="-fx-background-color: #f5dab0;" text="Descrição" />
         </columns>
       </TableView>
-      <Button layoutX="660.0" layoutY="14.0" mnemonicParsing="false" onAction="#novo" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #f5dab0;" text="Novo" />
-      <Button layoutX="660.0" layoutY="49.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #f5dab0;" text="Editar" />
-      <Button layoutX="660.0" layoutY="80.0" mnemonicParsing="false" onAction="#excluir" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #f5dab0;" text="Excluir" />
-      <Button layoutX="654.0" layoutY="361.0" mnemonicParsing="false" onAction="#voltar" style="-fx-background-color: #f5dab0;" text="Voltar" />
+      <Button layoutX="655.0" layoutY="35.0" mnemonicParsing="false" onAction="#novo" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #f5dab0;" text="Novo" />
+      <Button layoutX="655.0" layoutY="95.0" mnemonicParsing="false" onAction="#editar" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #f5dab0;" text="Editar" />
+      <Button layoutX="655.0" layoutY="154.0" mnemonicParsing="false" onAction="#excluir" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #f5dab0;" text="Excluir" />
+      <Button layoutX="655.0" layoutY="353.0" mnemonicParsing="false" onAction="#voltar" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #f5dab0;" text="Voltar" />
    </children>
 </AnchorPane>
