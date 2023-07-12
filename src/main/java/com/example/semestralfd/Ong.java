@@ -1,6 +1,7 @@
 package com.example.semestralfd;
 
 import java.util.Date;
+import java.util.List;
 
 public class Ong {
 
@@ -75,4 +76,7 @@ public class Ong {
     }
     public Date getOng_dt_cadastro() {return ong_dt_cadastro;}
     public void setOng_dt_cadastro(Date ong_dt_cadastro) {this.ong_dt_cadastro = ong_dt_cadastro;}
+
+    public void add(List<Ong> ongs) {
+    }
 }
