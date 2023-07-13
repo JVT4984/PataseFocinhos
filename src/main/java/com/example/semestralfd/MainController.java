@@ -68,7 +68,7 @@ public class MainController {
     }
 
     public void verAdocoes() throws IOException {
-        HelloApplication.setRoot("ver-adocao-view");
+        HelloApplication.showModal("ver-adocao-view");
     }
 
     public void verUsuario() throws IOException {

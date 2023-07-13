@@ -15,17 +15,17 @@ import java.util.ResourceBundle;
 
 public class RelatorioAdocaoController implements Initializable {
     @FXML
-    TableView tabelaAdocao;
+    TableView<Adocao> tabelaAdocao;
     @FXML
-    TableColumn colunaAdocao_id;
+    TableColumn<Adocao, Integer> colunaAdocao_id;
     @FXML
-    TableColumn colunaAdocao_ongid;
+    TableColumn<Adocao, Integer> colunaAdocao_ongid;
     @FXML
-    TableColumn colunaAdocao_usuarioid;
+    TableColumn<Adocao, Integer> colunaAdocao_usuarioid;
     @FXML
-    TableColumn colunaAdocao_animalid;
+    TableColumn<Adocao, Integer> colunaAdocao_animalid;
     @FXML
-    TableColumn colunaAdocao_dt;
+    TableColumn<Adocao, Integer> colunaAdocao_dt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -33,9 +33,9 @@ public class RelatorioAdocaoController implements Initializable {
         Configura as colunas da tabela da interfdce gráfica
          */
         colunaAdocao_id.setCellValueFactory(new PropertyValueFactory<>("adocao_id"));
-        colunaAdocao_ongid.setCellValueFactory(new PropertyValueFactory<>("usuario_usuario_id"));
-        colunaAdocao_usuarioid.setCellValueFactory(new PropertyValueFactory<>("ong_ong_id"));
-        colunaAdocao_animalid.setCellValueFactory(new PropertyValueFactory<>("animal_animal_id"));
+        colunaAdocao_ongid.setCellValueFactory(new PropertyValueFactory<>("adocao_usuario_id"));
+        colunaAdocao_usuarioid.setCellValueFactory(new PropertyValueFactory<>("adocao_ong_id"));
+        colunaAdocao_animalid.setCellValueFactory(new PropertyValueFactory<>("adocao_animal_id"));
         colunaAdocao_dt.setCellValueFactory(new PropertyValueFactory<>("data_adocao"));
 
         RelatorioDAO relatorioDAO = new RelatorioDAO();

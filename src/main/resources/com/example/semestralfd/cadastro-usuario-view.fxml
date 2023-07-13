@@ -17,14 +17,14 @@
       <Label layoutX="9.0" layoutY="233.0" prefHeight="18.0" prefWidth="90.0" text="Email" />
       <Label layoutX="9.0" layoutY="270.0" prefHeight="18.0" prefWidth="90.0" text="Endereço" />
       <TextField fx:id="usuario_idFild" disable="true" layoutX="63.0" layoutY="44.0" prefHeight="25.0" prefWidth="596.0" />
-      <TextField fx:id="usuario_loginFild" layoutX="63.0" layoutY="78.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_nomeFild" layoutX="63.0" layoutY="155.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_numeroFild" layoutX="63.0" layoutY="192.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_emailFild" layoutX="63.0" layoutY="230.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="usuario_enderecoFild" layoutX="63.0" layoutY="267.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <PasswordField fx:id="usuario_senhaFild" layoutX="63.0" layoutY="117.0" prefHeight="25.0" prefWidth="596.0" style="-fx-background-color: #f5dab0;" />
-      <Button layoutX="541.0" layoutY="349.0" mnemonicParsing="false" onAction="#salvar" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #f5dab0;" text="Salvar" />
-      <Button layoutX="643.0" layoutY="349.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #f5dab0;" text="Cancelar" />
+      <TextField fx:id="usuario_loginFild" layoutX="63.0" layoutY="78.0" prefHeight="25.0" prefWidth="596.0" />
+      <TextField fx:id="usuario_nomeFild" layoutX="63.0" layoutY="155.0" prefHeight="25.0" prefWidth="596.0" />
+      <TextField fx:id="usuario_numeroFild" layoutX="63.0" layoutY="192.0" prefHeight="25.0" prefWidth="596.0" />
+      <TextField fx:id="usuario_emailFild" layoutX="63.0" layoutY="230.0" prefHeight="25.0" prefWidth="596.0" />
+      <TextField fx:id="usuario_enderecoFild" layoutX="63.0" layoutY="267.0" prefHeight="25.0" prefWidth="596.0" />
+      <PasswordField fx:id="usuario_senhaFild" layoutX="63.0" layoutY="117.0" prefHeight="25.0" prefWidth="596.0" />
+      <Button layoutX="551.0" layoutY="349.0" mnemonicParsing="false" onAction="#salvar" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #f5dab0;" text="Salvar" />
+      <Button layoutX="659.0" layoutY="349.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="78.0" style="-fx-background-color: #f5dab0;" text="Cancelar" />
       <Label layoutX="8.0" layoutY="312.0" text="Data do Cadastro" />
       <DatePicker fx:id="usuario_dt_Fild" layoutX="110.0" layoutY="308.0" style="-fx-background-color: #f5dab0;" />
    </children>

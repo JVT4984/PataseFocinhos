@@ -92,7 +92,7 @@ public class UsuarioController implements Initializable {
         UsuarioModalController.usuario = usuarioSelecionado;
         if (UsuarioSingleton.getUsuarioSingleton().getUsuario_id() == usuarioSelecionado.getUsuario_id()) {
 
-            HelloApplication.showModal("ong-modal-view");
+            HelloApplication.showModal("usuario-modal-view");
 
             // O modal foi fechado
 

@@ -5,23 +5,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.OngModalController">
+<AnchorPane prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.OngModalController">
    <children>
-      <TextField fx:id="ong_idFild" disable="true" layoutX="89.0" layoutY="15.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <Label layoutX="23.0" layoutY="19.0" text="Cógido" />
-      <TextField fx:id="ong_nomeFild" layoutX="87.0" layoutY="145.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <Label layoutX="27.0" layoutY="149.0" text="Nome" />
-      <TextField fx:id="ong_emailFild" layoutX="87.0" layoutY="188.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <Label layoutX="29.0" layoutY="192.0" text="Email" />
-      <TextField fx:id="ong_numeroFild" layoutX="87.0" layoutY="233.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <Label layoutX="20.0" layoutY="237.0" text="Telefone" />
-      <TextField fx:id="ong_enderecoFild" layoutX="87.0" layoutY="273.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <Label layoutX="19.0" layoutY="277.0" text="Endereco" />
-      <Button layoutX="466.0" layoutY="361.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-      <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-      <TextField fx:id="ong_loginFild" layoutX="87.0" layoutY="56.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <TextField fx:id="ong_senhaFild" layoutX="87.0" layoutY="103.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
-      <Label layoutX="28.0" layoutY="60.0" text="Login" />
-      <Label layoutX="27.0" layoutY="107.0" text="Senha" />
+      <TextField fx:id="ong_idFild" disable="true" layoutX="125.0" layoutY="34.0" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: #f5dab0;" />
+      <Label layoutX="59.0" layoutY="38.0" text="Cógido" />
+      <TextField fx:id="ong_nomeFild" layoutX="123.0" layoutY="164.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="63.0" layoutY="168.0" text="Nome" />
+      <TextField fx:id="ong_emailFild" layoutX="123.0" layoutY="207.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="65.0" layoutY="211.0" text="Email" />
+      <TextField fx:id="ong_numeroFild" layoutX="123.0" layoutY="252.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="56.0" layoutY="256.0" text="Telefone" />
+      <TextField fx:id="ong_enderecoFild" layoutX="123.0" layoutY="292.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="55.0" layoutY="296.0" text="Endereco" />
+      <Button layoutX="508.0" layoutY="348.0" mnemonicParsing="false" onAction="#salvar" prefHeight="41.0" prefWidth="95.0" style="-fx-background-color: #f5dab0;" text="Salvar" />
+      <Button layoutX="629.0" layoutY="348.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="41.0" prefWidth="95.0" style="-fx-background-color: #f5dab0;" text="Cancelar" />
+      <TextField fx:id="ong_loginFild" layoutX="123.0" layoutY="75.0" prefHeight="25.0" prefWidth="478.0" />
+      <TextField fx:id="ong_senhaFild" layoutX="123.0" layoutY="122.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="64.0" layoutY="79.0" text="Login" />
+      <Label layoutX="63.0" layoutY="126.0" text="Senha" />
    </children>
 </AnchorPane>

@@ -6,6 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
@@ -30,9 +31,9 @@ public class VerAdocaoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         ColunaAdocao_id.setCellValueFactory(new PropertyValueFactory<>("adocao_id"));
-        ColunaAdocao_usuario_id.setCellValueFactory(new PropertyValueFactory<>("usuario_usuario_id"));
-        ColunaAdocao_ong_id.setCellValueFactory(new PropertyValueFactory<>("ong_ong_id"));
-        ColunaAdocao_animal_id.setCellValueFactory(new PropertyValueFactory<>("animal_animal_id"));
+        ColunaAdocao_usuario_id.setCellValueFactory(new PropertyValueFactory<>("adocao_usuario_id"));
+        ColunaAdocao_ong_id.setCellValueFactory(new PropertyValueFactory<>("adocao_ong_id"));
+        ColunaAdocao_animal_id.setCellValueFactory(new PropertyValueFactory<>("adocao_animal_id"));
         Coluna_Dt_adocao.setCellValueFactory(new PropertyValueFactory<>("data_adocao"));
 
         AdocaoDAO adocaoDAO = new AdocaoDAO();
@@ -42,5 +43,9 @@ public class VerAdocaoController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void voltar() throws IOException {
+        HelloApplication.closeCurrentWindow();
     }
 }

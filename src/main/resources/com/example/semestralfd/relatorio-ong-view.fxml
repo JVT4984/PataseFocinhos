@@ -5,21 +5,21 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioOngController">
+<AnchorPane prefHeight="308.0" prefWidth="752.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioOngController">
    <children>
-      <TableView fx:id="tabelaAnimal" prefHeight="400.0" prefWidth="700.0">
+      <TableView fx:id="tabelaAnimal" prefHeight="376.0" prefWidth="695.0">
         <columns>
-          <TableColumn fx:id="colunaRelatorioAnimal_id" prefWidth="48.0" text="C1" />
-          <TableColumn fx:id="colunaRelatorioOng_id" prefWidth="53.0" text="C2" />
-            <TableColumn fx:id="colunaRelatorioTipo_animal" prefWidth="73.0" text="C2" />
-            <TableColumn fx:id="colunaRelatorioRaca" prefWidth="89.0" text="C2" />
-            <TableColumn fx:id="colunaRelatorioPorte" prefWidth="85.0" text="C2" />
-            <TableColumn fx:id="colunaRelatorioSexo_animal" text="C2" />
-            <TableColumn fx:id="colunaRelatorioIdade" prefWidth="42.0" text="C2" />
-            <TableColumn fx:id="colunaRelatorioDescribe" prefWidth="136.0" text="C2" />
-            <TableColumn fx:id="colunaRelatorioDataCadastro" prefWidth="93.0" text="C2" />
+          <TableColumn fx:id="colunaRelatorioAnimal_id" prefWidth="48.0" style="-fx-background-color: #f5dab0;" text="C1" />
+          <TableColumn fx:id="colunaRelatorioOng_id" prefWidth="53.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioTipo_animal" prefWidth="73.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioRaca" prefWidth="89.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioPorte" prefWidth="85.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioSexo_animal" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioIdade" prefWidth="42.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioDescribe" prefWidth="136.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaRelatorioDataCadastro" prefWidth="93.0" style="-fx-background-color: #f5dab0;" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="706.0" layoutY="354.0" mnemonicParsing="false" text="Voltar" />
+      <Button layoutX="694.0" layoutY="332.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="61.0" style="-fx-background-color: #f5dab0;" text="Voltar" />
    </children>
 </AnchorPane>

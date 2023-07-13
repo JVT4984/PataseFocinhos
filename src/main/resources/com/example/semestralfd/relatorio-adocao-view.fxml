@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioAdocaoController">
+<AnchorPane prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioAdocaoController">
    <children>
-      <TableView fx:id="tabelaAdocao" prefHeight="400.0" prefWidth="512.0">
+      <TableView fx:id="tabelaAdocao" prefHeight="412.0" prefWidth="509.0">
         <columns>
-          <TableColumn fx:id="colunaAdocao_id" prefWidth="91.0" text="C1" />
-          <TableColumn fx:id="colunaAdocao_ongid" prefWidth="105.0" text="C2" />
-            <TableColumn fx:id="colunaAdocao_usuarioid" prefWidth="98.0" text="C2" />
-            <TableColumn fx:id="colunaAdocao_animalid" prefWidth="96.0" text="C2" />
-            <TableColumn fx:id="colunaAdocao_dt" prefWidth="121.0" text="C2" />
+          <TableColumn fx:id="colunaAdocao_id" prefWidth="91.0" style="-fx-background-color: #f5dab0;" text="C1" />
+          <TableColumn fx:id="colunaAdocao_ongid" prefWidth="105.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaAdocao_usuarioid" prefWidth="98.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaAdocao_animalid" prefWidth="96.0" style="-fx-background-color: #f5dab0;" text="C2" />
+            <TableColumn fx:id="colunaAdocao_dt" prefWidth="118.0" style="-fx-background-color: #f5dab0;" text="C2" />
         </columns>
       </TableView>
+      <Button layoutX="588.0" layoutY="361.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0" style="-fx-background-color: #f5dab0;" text="Voltar" />
    </children>
 </AnchorPane>
