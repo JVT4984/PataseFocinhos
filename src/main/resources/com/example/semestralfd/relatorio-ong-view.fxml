@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="308.0" prefWidth="752.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioOngController">
+<AnchorPane prefHeight="308.0" prefWidth="750.0" style="-fx-background-color: #f08a37;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.RelatorioOngController">
    <children>
       <TableView fx:id="tabelaAnimal" prefHeight="376.0" prefWidth="695.0">
         <columns>

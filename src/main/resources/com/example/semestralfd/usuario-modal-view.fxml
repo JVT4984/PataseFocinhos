@@ -5,23 +5,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.UsuarioModalController">
+<AnchorPane prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #f7a220;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralfd.UsuarioModalController">
    <children>
-      <TextField fx:id="usuario_idFild" disable="true" layoutX="89.0" layoutY="15.0" prefHeight="25.0" prefWidth="478.0" />
-      <Label layoutX="23.0" layoutY="19.0" text="Cógido" />
-      <TextField fx:id="usuario_nomeFild" layoutX="89.0" layoutY="143.0" prefHeight="25.0" prefWidth="478.0" />
-      <Label layoutX="22.0" layoutY="147.0" text="Nome" />
-      <TextField fx:id="usuario_emailFild" layoutX="89.0" layoutY="183.0" prefHeight="25.0" prefWidth="478.0" />
-      <Label layoutX="24.0" layoutY="187.0" text="Email" />
-      <TextField fx:id="usuario_numeroFild" layoutX="89.0" layoutY="222.0" prefHeight="25.0" prefWidth="478.0" />
-      <Label layoutX="16.0" layoutY="226.0" text="Telefone" />
-      <TextField fx:id="usuario_enderecoFild" layoutX="89.0" layoutY="271.0" prefHeight="25.0" prefWidth="478.0" />
-      <Label layoutX="14.0" layoutY="275.0" text="Endereco" />
+      <TextField fx:id="usuario_idFild" disable="true" layoutX="124.0" layoutY="40.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="58.0" layoutY="44.0" text="Cógido" />
+      <TextField fx:id="usuario_nomeFild" layoutX="124.0" layoutY="168.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="57.0" layoutY="172.0" text="Nome" />
+      <TextField fx:id="usuario_emailFild" layoutX="124.0" layoutY="208.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="59.0" layoutY="212.0" text="Email" />
+      <TextField fx:id="usuario_numeroFild" layoutX="124.0" layoutY="247.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="51.0" layoutY="251.0" text="Telefone" />
+      <TextField fx:id="usuario_enderecoFild" layoutX="124.0" layoutY="296.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="49.0" layoutY="300.0" text="Endereco" />
       <Button layoutX="466.0" layoutY="361.0" mnemonicParsing="false" onAction="#salvar" style="-fx-background-color: #f5dab0;" text="Salvar" />
       <Button layoutX="524.0" layoutY="361.0" mnemonicParsing="false" onAction="#cancelar" style="-fx-background-color: #f5dab0;" text="Cancelar" />
-      <TextField fx:id="usuario_loginFild" layoutX="89.0" layoutY="57.0" prefHeight="25.0" prefWidth="478.0" />
-      <TextField fx:id="usuario_senhaFild" layoutX="89.0" layoutY="103.0" prefHeight="25.0" prefWidth="478.0" />
-      <Label layoutX="23.0" layoutY="61.0" text="Login" />
-      <Label layoutX="23.0" layoutY="107.0" text="Senha" />
+      <TextField fx:id="usuario_loginFild" layoutX="124.0" layoutY="82.0" prefHeight="25.0" prefWidth="478.0" />
+      <TextField fx:id="usuario_senhaFild" layoutX="124.0" layoutY="128.0" prefHeight="25.0" prefWidth="478.0" />
+      <Label layoutX="58.0" layoutY="86.0" text="Login" />
+      <Label layoutX="58.0" layoutY="132.0" text="Senha" />
    </children>
 </AnchorPane>

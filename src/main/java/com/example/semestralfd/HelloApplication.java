@@ -49,6 +49,7 @@ public class HelloApplication extends Application {
         modalStage.initModality(Modality.APPLICATION_MODAL);
         modalStage.initOwner(scene.getRoot().getScene().getWindow());
         modalStage.setScene(modalScene);
+        modalStage.setResizable(false);
         modalStage.showAndWait();
     }
 
