@@ -18,6 +18,8 @@ public class AdocaoDAO {
                 adocao.adocao_animal_id = rs.getInt(4);
                 adocao.data_adocao = rs.getDate(5);
 
+                adocaos.add(adocao);
+
             }
             return adocaos;
         }
